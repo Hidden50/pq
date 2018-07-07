@@ -293,8 +293,8 @@ window.addEventListener('load', () => {
 	});
 
 	document.addEventListener('keydown', e => {
-		if (document.activeElement !== app.components.search.input) {
-			if (!e.ctrlKey && !e.AltKey && !e.shiftKey && /^[\w ]$/.test(e.key)) {
+		if (document.activeElement.nodeName !== "INPUT") {
+			if (!e.ctrlKey && !e.AltKey && !e.shiftKey && /(^[\w ]$)|Backspace/.test(e.key)) {
 				app.components.search.input.focus();
 			}
 		}
