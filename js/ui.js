@@ -282,7 +282,7 @@ window.addEventListener('load', () => {
 		app.searchbarClicked = false;
 	}, 100));
 	app.components.search.input.addEventListener('keydown', e => {
-		if (e.key === "Enter") {
+		if (!e.ctrlKey && !e.AltKey && !e.shiftKey && e.key === "Enter") {
 			const search = app.components.search.input.value;
 			app.updateUI(true, true, search);
 			app.components.search.input.value = "";
@@ -292,7 +292,7 @@ window.addEventListener('load', () => {
 
 	document.addEventListener('keydown', e => {
 		if (document.activeElement !== app.components.search.input) {
-			if (/^[\w ]$/.test(e.key)) {
+			if (!e.ctrlKey && !e.AltKey && !e.shiftKey && /^[\w ]$/.test(e.key)) {
 				app.components.search.input.focus();
 			}
 		}
