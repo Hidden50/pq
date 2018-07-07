@@ -366,7 +366,7 @@ window.addEventListener('load', () => {
 		}
 	});
 
-	app.components.pokedata.header.addEventListener('click', () => {
+	app.components.pokedata.header.addEventListener('click', e => {
 		app.components.pokedata.toggleDetails();
 		e.stopPropagation();
 	});
