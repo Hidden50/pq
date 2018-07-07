@@ -20,7 +20,7 @@ footer {
 .search {
 	display: flex;
 	flex-direction: column;
-	width: 271px;
+	width: 280px;
 	margin: 5px;
 	background: #ffffff11;
 	border: 1px solid black;
@@ -82,6 +82,11 @@ html:not(.compact) .pokedata {
 	border-radius: 5px;
 }
 
+.pokedata:not(:first-of-type) input {
+	pointer-events: none;
+	background: #aaaaaa;
+}
+
 .pokedata .header {
 	display: flex;
 	width: 100%;
@@ -100,6 +105,22 @@ html:not(.compact) .pokedata {
 	font-size: 25px;
 	color: #eeeeee;
 	margin-right: 7px;
+}
+
+.btn-close {
+	background: #f60000;
+	width: 22px;
+	height: 22px;
+	text-align: center;
+	border-radius: 5px;
+	border: 1px solid #bbbbbb;
+	margin-left: auto;
+	margin-right: 12px;
+}
+.btn-close::after {
+	content: 'x';
+	color: #eeeeee;
+	text-shadow: 1px 1px 1px #000000;
 }
 
 .pokedata .group {
