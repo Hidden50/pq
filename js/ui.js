@@ -187,7 +187,7 @@ app.components.pokedata = {
 				atkSlots
 			} ATK stones and ${
 				hpSlots
-			} HP stones:</td></tr><tr><th>Deco</th><th>Probability</th></tr>${
+			} HP stones:</td></tr><tr><th>Decoration</th><th>Probability</th></tr>${
 				multiSlotChances.map( (multiSlotChance, i) => {
 					const prob = (100 * app.math.slotProbability(
 						atkSlots,
