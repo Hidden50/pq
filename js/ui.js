@@ -84,6 +84,9 @@ app.components.pokedata = {
 		if (!pokemon) {
 			pokemon = this.activePokemon;
 		}
+		while (pokemon.evolutions && pokemon.evolutions.length === 1) {
+			pokemon = app.pokeData[pokemon.evolutions[0].dexNum - 1];
+		}
 		const evolutions = [];
 		while (pokemon) {
 			evolutions.push(pokemon);
