@@ -13,6 +13,7 @@ app.components.pokedata = {
 	header: document.querySelector(".pokedata .header"),
 	face: document.querySelector(".pokedata .header .faces"),
 	name: document.querySelector(".pokedata .header .name"),
+	sideBySideButton: document.querySelector(".pokedata .header .btn-add"),
 	moves: document.querySelector(".pokedata .moves .data"),
 	recipes: document.querySelector(".pokedata .recipes .data"),
 	bingos: document.querySelector(".pokedata .bingos .data"),
@@ -54,9 +55,9 @@ app.components.pokedata = {
 		/*
 		*   add a close button to remove the cloned pokedata
 		*/
-		const closeBtn = document.createElement("DIV");
+		const closeBtn = header.querySelector(".btn-add");
+		closeBtn.classList.remove("btn-add");
 		closeBtn.classList.add("btn-close");
-		header.appendChild(closeBtn);
 		closeBtn.addEventListener( 'click', e => {
 			let section = e.target;
 			while (section && section.nodeName !== "SECTION") {
@@ -364,6 +365,12 @@ window.addEventListener('load', () => {
 
 	app.components.pokedata.header.addEventListener('click', () => {
 		app.components.pokedata.toggleDetails();
+		e.stopPropagation();
+	});
+
+	app.components.pokedata.sideBySideButton.addEventListener('click', e => {
+		document.documentElement.classList.remove("compact");
+		app.components.pokedata.clone();
 		e.stopPropagation();
 	});
 });
