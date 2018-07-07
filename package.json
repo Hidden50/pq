@@ -1,0 +1,30 @@
+{
+  "name": "pq",
+  "version": "1.0.0",
+  "description": "Pokemon Quest Pokedex",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hidden50/pq.git"
+  },
+  "keywords": [
+    "pokemon",
+    "quest",
+    "pokedex"
+  ],
+  "author": "Hidden50",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/hidden50/pq/issues"
+  },
+  "homepage": "https://github.com/hidden50/pq#readme",
+  "dependencies": {
+    "gulp-clean-css": "^3.9.4",
+    "gulp-image-resize": "^0.13.0",
+    "gulpfile.js": "^2.0.3",
+    "imagemin-pngquant": "^5.1.0"
+  }
+}
