@@ -1,0 +1,235 @@
+html, body {
+	display: grid;
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+	background: #7fb6e0;
+}
+
+main {
+	display: flex;
+	max-width: 100%;
+	min-height: calc(100% - 10px);
+	margin: 5px;
+}
+footer {
+	margin-top: auto;
+}
+
+.search {
+	display: flex;
+	flex-direction: column;
+	width: 271px;
+	margin: 5px;
+	background: #ffffff11;
+	border: 1px solid black;
+	border-radius: 5px;
+}
+
+html:not(.compact) main {
+	flex-direction: column;
+}
+html:not(.compact) .search {
+	width: unset;
+}
+html:not(.compact) .pokedata {
+	display: none;
+}
+@media (max-width: 680px) {
+	main {
+		flex-direction: column;
+	}
+	.search {
+		width: unset;
+	}
+	html.compact .search:not(.searching) .results {
+		display: none;
+	}
+}
+
+.search .title {
+	font-weight: 600;
+	margin: 0px;
+	padding: 0px;
+	border-bottom: 1px solid black;
+	text-align: center;
+}
+.search input {
+	align-self: center;
+	width: calc(33% + 150px);
+	margin: 12px 7px;
+	padding: 5px;
+	border-radius: 7px;
+}
+.search .results {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	padding: 3px;
+}
+.search .results .faces {
+	margin: 3px;
+	cursor: pointer;
+}
+
+.pokedata {
+	flex: 1;
+	display: flex;
+	flex-wrap: wrap;
+	align-content: flex-start;
+	margin: 5px;
+	border-radius: 5px;
+}
+
+.pokedata .header {
+	display: flex;
+	width: 100%;
+	height: 30px;
+	padding: 15px 7px;
+	margin-bottom: 8px;
+	align-items: center;
+	background: #111111;
+	border-radius: 5px;
+	cursor: pointer;
+}
+.pokedata .header .faces {
+	margin-right: 8px;
+}
+.pokedata .header .name {
+	font-size: 25px;
+	color: #eeeeee;
+	margin-right: 7px;
+}
+
+.pokedata .group {
+	flex-grow: 1;
+	margin: 5px 5px;
+	padding: 0px;
+	border-radius: 5px;
+}
+.pokedata > .group {
+	background: #ffffff11;
+	border: 1px solid black;
+}
+.pokedata .group:not([open]) {
+	align-self: flex-start;
+}
+.pokedata .group > .title {
+	font-weight: 600;
+	font-size: 16px;
+	padding: 3px 5px;
+	border-bottom: 1px solid black;
+}
+.pokedata details.group > summary.title {
+	cursor: pointer;
+}
+.pokedata .group > .data {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	margin: 8px;
+}
+
+.pokedata table {
+	margin: 0px 6px 6px 0px;
+	border: 1px solid black;
+	border-radius: 3px;
+	cursor: default;
+}
+.pokedata table th,
+.pokedata table td {
+	padding: 0px 15px 0px 5px;
+}
+.pokedata table td:last-child {
+	padding: 0px 10px 0px 5px;
+}
+.pokedata table tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
+.pokedata table tr:nth-child(odd) {
+	background-color: #f2f2f2cc;
+}
+.pokedata table tr:hover {
+	background-color: #eeeeee;
+}
+
+.pokedata .recipes table td:nth-child(3) {
+	text-align: right;
+}
+
+.pokedata .stats table td:nth-child(2) {
+	white-space: pre;
+	font-family: monospace;
+}
+
+.pokedata .bingos table td {
+	text-align: center;
+}
+
+.pokedata .stoneslots .input {
+	margin-bottom: 5px;
+}
+.pokedata .stoneslots .input input {
+	width: 35px;
+	border-radius: 2px;
+	text-align: center;
+}
+.pokedata .stoneslots table tr:first-child td {
+	max-width: 240px;
+}
+.pokedata .stoneslots table td:nth-child(2) {
+	text-align: right;
+}
+
+.pokedata .rawdata code {
+	transform: rotateX(180deg);
+	width: 100%;
+	max-width: 75vw;
+	padding: 5px;
+	white-space: pre;
+	overflow-x: auto;
+	background: #000000;
+	color: #cccccc;
+	border: 1px solid #cccccc;
+	font-family: Consolas,Liberation Mono,Courier,monospace;
+	font-size: 13px;
+	tab-size: 5;
+	-moz-tab-size: 5;
+}
+.pokedata .rawdata code > .output {
+	transform: rotateX(180deg);
+	display: inline-block;
+	cursor: text;
+}
+
+.faces {
+	margin: 3px;
+	border: 1px solid rgba(0, 0, 0, 0.4);
+	border-radius: 5px;
+}
+
+nav {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-end;
+	padding: 5px;
+	margin: 0;
+}
+nav > a {
+	display: flex;
+	align-items: center;
+	padding: 12px;
+	margin: 3px 4px;
+	border-radius: 50%;
+	background: #72a3c9;
+	text-decoration: none;
+	color: #000;
+}
+nav > a:hover {
+	background: #6393b5;
+}
+nav > a > img {
+	margin-right: 5px;
+}
