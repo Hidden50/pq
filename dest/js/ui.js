@@ -38,6 +38,47 @@ app.components.pokedata = {
 		this.calculateSlotChances();
 		this.rawData.innerText = JSON.stringify(pokemon, null, "\t");
 	},
+	clone () {
+		this.container.insertAdjacentHTML('afterend',
+			`<section class="pokedata">${
+				this.container.innerHTML
+			}</section>`
+		);
+
+		const inserted = this.container.nextElementSibling;
+		const header = inserted.querySelector(".header");
+		header.addEventListener('click', e => {
+			this.toggleDetails(inserted);
+			e.preventPropagation();
+		});
+		/*
+		*   add a close button to remove the cloned pokedata
+		*/
+		const closeBtn = document.createElement("DIV");
+		closeBtn.classList.add("btn-close");
+		header.appendChild(closeBtn);
+		closeBtn.addEventListener( 'click', e => {
+			let section = e.target;
+			while (section && section.nodeName !== "SECTION") {
+				section = section.parentNode;
+			}
+			section.parentNode.removeChild(section);
+			e.preventPropagation();
+		});
+	},
+	toggleDetails (target = this.container) {
+		const details = [...target.querySelectorAll("details")];
+		let open = true;
+		for (const detail of details) {
+			if (detail.open) {
+				open = false;
+				break;
+			}
+		}
+		for (const detail of details) {
+			detail.open = open;
+		}
+	},
 	getEvolutions (pokemon) {
 		if (!pokemon) {
 			pokemon = this.activePokemon;
@@ -300,8 +341,12 @@ window.addEventListener('load', () => {
 		}
 	});
 
-	app.components.pokedata.slots.atk.addEventListener('input', app.components.pokedata.calculateSlotChances.bind(app.components.pokedata));
-	app.components.pokedata.slots.hp.addEventListener('input', app.components.pokedata.calculateSlotChances.bind(app.components.pokedata));
+	app.components.pokedata.slots.atk.addEventListener('input',
+		app.components.pokedata.calculateSlotChances.bind(app.components.pokedata)
+	);
+	app.components.pokedata.slots.hp.addEventListener('input',
+		app.components.pokedata.calculateSlotChances.bind(app.components.pokedata)
+	);
 
 	app.components.search.container.addEventListener('click', e => {
 		if (e.target === app.components.search.input) {
@@ -310,22 +355,16 @@ window.addEventListener('load', () => {
 				app.searchbarClicked = true;
 			}
 		} else if (e.target && e.target.title) {
+			if (e.ctrlKey && app.components.pokedata.activePokemon) {
+				app.components.pokedata.clone();
+			}
 			app.updateUI(true, false, e.target.title);
 		}
 	});
 
-	app.components.pokedata.header.addEventListener('click', e => {
-		const details = [...app.components.pokedata.container.querySelectorAll("details")];
-		let open = true;
-		for (const detail of details) {
-			if (detail.open) {
-				open = false;
-				break;
-			}
-		}
-		for (const detail of details) {
-			detail.open = open;
-		}
+	app.components.pokedata.header.addEventListener('click', () => {
+		app.components.pokedata.toggleDetails();
+		e.preventPropagation();
 	});
 });
 
