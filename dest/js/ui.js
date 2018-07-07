@@ -287,6 +287,8 @@ window.addEventListener('load', () => {
 			app.updateUI(true, true, search);
 			app.components.search.input.value = "";
 			app.updateUI(false, true);
+		} else if (!e.ctrlKey && !e.AltKey && !e.shiftKey && e.key === "Escape") {
+			app.components.search.input.blur();
 		}
 	});
 
