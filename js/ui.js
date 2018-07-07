@@ -49,7 +49,7 @@ app.components.pokedata = {
 		const header = inserted.querySelector(".header");
 		header.addEventListener('click', e => {
 			this.toggleDetails(inserted);
-			e.preventPropagation();
+			e.stopPropagation();
 		});
 		/*
 		*   add a close button to remove the cloned pokedata
@@ -63,7 +63,7 @@ app.components.pokedata = {
 				section = section.parentNode;
 			}
 			section.parentNode.removeChild(section);
-			e.preventPropagation();
+			e.stopPropagation();
 		});
 	},
 	toggleDetails (target = this.container) {
@@ -364,7 +364,7 @@ window.addEventListener('load', () => {
 
 	app.components.pokedata.header.addEventListener('click', () => {
 		app.components.pokedata.toggleDetails();
-		e.preventPropagation();
+		e.stopPropagation();
 	});
 });
 
