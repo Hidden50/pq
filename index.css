@@ -107,6 +107,7 @@ html:not(.compact) .pokedata {
 	margin-right: 7px;
 }
 
+.btn-add,
 .btn-close {
 	background: #f60000;
 	width: 22px;
@@ -116,6 +117,11 @@ html:not(.compact) .pokedata {
 	border: 1px solid #bbbbbb;
 	margin-left: auto;
 	margin-right: 12px;
+}
+.btn-add::after {
+	content: '+';
+	color: #eeeeee;
+	text-shadow: 1px 1px 1px #000000;
 }
 .btn-close::after {
 	content: 'x';
