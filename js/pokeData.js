@@ -15,7 +15,7 @@ app.pokeTypes = [
 	"Psychic",
 	"Ice",
 	"Dragon",
-	"Ghost",
+	"Dark",
 	"Fairy",
 ];
 
