@@ -31,7 +31,7 @@ app.components.pokedata = {
 
 		this.activePokemon = pokemon;
 		this.face.className = `faces face-${pokemon.dexNum}`;
-		this.name.innerText = `${pokemon.dexNum} ${pokemon.name}`;
+		this.name.innerText = `#${pokemon.dexNum} ${pokemon.name}`;
 		this.formatMovelist();
 		this.formatRecipes();
 		this.formatBingos();
@@ -372,6 +372,11 @@ window.addEventListener('load', () => {
 		document.documentElement.classList.remove("compact");
 		app.components.pokedata.clone();
 		e.stopPropagation();
+	});
+
+	const title = document.body.querySelector(".search .title");
+	title.addEventListener( 'click', e => {
+		window.location.reload();
 	});
 });
 
