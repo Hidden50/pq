@@ -111,11 +111,11 @@ app.components.pokedata = {
 	},
 	formatRecipes () {
 		let pokemon = this.activePokemon;
-		while (pokemon && !pokemon.recipes && pokemon.preEvo) {
+		while (pokemon && !pokemon.recipeWeights && pokemon.preEvo) {
 			pokemon = app.pokeData[pokemon.preEvo - 1];
 		}
 
-		if (!pokemon || !pokemon.recipes) {
+		if (!pokemon || !pokemon.recipeWeights) {
 			this.recipes.innerHTML = (
 				`<table><tr><th colspan="3">${
 					pokemon && pokemon.name || "?"
@@ -125,20 +125,34 @@ app.components.pokedata = {
 			return;
 		}
 
+		const recipes = [];
+		for (const dish in pokemon.recipeWeights) {
+			for (const quality in pokemon.recipeWeights[dish]) {
+				if (!app.recipeTable[dish][quality].length) {
+					continue;  // impossible: no recipe results in this dish/quality combination
+				}
+
+				const weight = pokemon.recipeWeights[dish][quality];
+				if (weight) {
+					const recipeChance = weight / app.recipeWeightSums[dish][quality];
+					recipes.push([dish, quality, recipeChance]);
+				}
+			}
+		}
+		recipes.sort( ([,,leftChance], [,,rightChance]) => rightChance - leftChance );
+
 		this.recipes.innerHTML = `<table><tr><th colspan="3">${
 			pokemon.name
 		}</th></tr><tr><th>Dish</th><th>Quality</th><th>Chance</th></tr>${
-			Object.entries(pokemon.recipes)
-			.map( ([recipeName, recipeChance]) =>
+			recipes.map( ([dish, quality, recipeChance]) =>
 				`<tr><td>${
-					recipeName
-						.replace(/_/g, " ")
-						.replace(/(\w+) (.*)/, "$1</td><td>$2")
+					dish
 				}</td><td>${
-					recipeChance
-				}</td></tr>`
-			)
-			.join("")
+					quality.replace("_", " ")
+				}</td><td>${
+					(100 * recipeChance).toFixed(2)
+				}%</td></tr>`
+			).join("")
 		}</table>`;
 	},
 	formatBingos () {
