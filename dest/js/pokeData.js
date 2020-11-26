@@ -35,19 +35,37 @@ app.pokeData = [
 						hpChanceWeight:     57,
 						atkChanceWeight:    38,
 					},
-		recipes:       {
-						Grass_special:      "80.00%",
-						Poison_special:     "51.61%",
-						Grass_very_good:    "26.67%",
-						Yellow_special:     "18.75%",
-						Poison_very_good:   "14.41%",
-						Yellow_very_good:   "11.96%",
-						Mulligan_special:   "3.33%",
-						Mulligan_very_good: "2.00%",
-						Grass_good:         "1.95%",
-						Yellow_good:        "1.52%",
-						Poison_good:        "0.98%",
-						Mulligan_good:      "0.23%",
+		recipeWeights: {
+						Mulligan: {
+									basic:         0,
+									good:          500,
+									very_good:     10000,
+									special:       10000,
+								},
+						Yellow:   {
+									basic:         0,
+									good:          400,
+									very_good:     8000,
+									special:       8000,
+								},
+						Grass:    {
+									basic:         0,
+									good:          400,
+									very_good:     8000,
+									special:       8000,
+								},
+						Poison:   {
+									basic:         0,
+									good:          400,
+									very_good:     8000,
+									special:       8000,
+								},
+						Ambrosia: {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
 					},
 		moves:         [
 						"Vine Whip",
@@ -205,16 +223,31 @@ app.pokeData = [
 						hpChanceWeight:     38,
 						atkChanceWeight:    57,
 					},
-		recipes:       {
-						Fire_special:       "80.00%",
-						Fire_very_good:     "40.00%",
-						Red_special:        "19.76%",
-						Red_very_good:      "4.30%",
-						Fire_good:          "3.81%",
-						Mulligan_special:   "3.33%",
-						Mulligan_very_good: "2.00%",
-						Red_good:           "0.27%",
-						Mulligan_good:      "0.23%",
+		recipeWeights: {
+						Mulligan: {
+									basic:         0,
+									good:          500,
+									very_good:     10000,
+									special:       10000,
+								},
+						Red:      {
+									basic:         0,
+									good:          400,
+									very_good:     8000,
+									special:       8000,
+								},
+						Fire:     {
+									basic:         0,
+									good:          400,
+									very_good:     8000,
+									special:       8000,
+								},
+						Ambrosia: {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
 					},
 		moves:         [
 						"Fire Punch",
@@ -370,16 +403,31 @@ app.pokeData = [
 						hpChanceWeight:     48,
 						atkChanceWeight:    48,
 					},
-		recipes:       {
-						Blue_special:       "33.56%",
-						Water_special:      "25.81%",
-						Blue_very_good:     "7.70%",
-						Water_very_good:    "7.21%",
-						Mulligan_special:   "3.33%",
-						Mulligan_very_good: "2.00%",
-						Blue_good:          "0.49%",
-						Water_good:         "0.49%",
-						Mulligan_good:      "0.23%",
+		recipeWeights: {
+						Mulligan: {
+									basic:         0,
+									good:          500,
+									very_good:     10000,
+									special:       10000,
+								},
+						Blue:     {
+									basic:         0,
+									good:          200,
+									very_good:     4000,
+									special:       4000,
+								},
+						Water:    {
+									basic:         0,
+									good:          200,
+									very_good:     4000,
+									special:       4000,
+								},
+						Ambrosia: {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
 					},
 		moves:         [
 						"Bubble",
@@ -534,10 +582,31 @@ app.pokeData = [
 						hpChanceWeight:     52,
 						atkChanceWeight:    43,
 					},
-		recipes:       {
-						Bug_basic:          "50.00%",
-						Blue_basic:         "20.00%",
-						Mulligan_basic:     "4.17%",
+		recipeWeights: {
+						Mulligan: {
+									basic:         10000,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Blue:     {
+									basic:         10000,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Bug:      {
+									basic:         10000,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Ambrosia: {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
 					},
 		moves:         [
 						"String Shot",
@@ -693,11 +762,37 @@ app.pokeData = [
 						hpChanceWeight:     48,
 						atkChanceWeight:    48,
 					},
-		recipes:       {
-						Bug_basic:          "50.00%",
-						Poison_basic:       "16.67%",
-						Yellow_basic:       "12.50%",
-						Mulligan_basic:     "4.17%",
+		recipeWeights: {
+						Mulligan: {
+									basic:         10000,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Yellow:   {
+									basic:         10000,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Bug:      {
+									basic:         10000,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Poison:   {
+									basic:         10000,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Ambrosia: {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
 					},
 		moves:         [
 						"String Shot",
@@ -855,11 +950,37 @@ app.pokeData = [
 						hpChanceWeight:     48,
 						atkChanceWeight:    48,
 					},
-		recipes:       {
-						Flying_basic:       "50.00%",
-						Normal_basic:       "25.00%",
-						Yellow_basic:       "12.50%",
-						Mulligan_basic:     "4.17%",
+		recipeWeights: {
+						Mulligan: {
+									basic:         10000,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Yellow:   {
+									basic:         10000,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Normal:   {
+									basic:         10000,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Flying:   {
+									basic:         10000,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Ambrosia: {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
 					},
 		moves:         [
 						"Gust",
@@ -1017,10 +1138,31 @@ app.pokeData = [
 						hpChanceWeight:     43,
 						atkChanceWeight:    52,
 					},
-		recipes:       {
-						Normal_basic:       "25.00%",
-						Blue_basic:         "20.00%",
-						Mulligan_basic:     "4.17%",
+		recipeWeights: {
+						Mulligan: {
+									basic:         10000,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Blue:     {
+									basic:         10000,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Normal:   {
+									basic:         10000,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Ambrosia: {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
 					},
 		moves:         [
 						"Tackle",
@@ -1123,11 +1265,37 @@ app.pokeData = [
 						hpChanceWeight:     43,
 						atkChanceWeight:    52,
 					},
-		recipes:       {
-						Flying_basic:       "50.00%",
-						Normal_basic:       "25.00%",
-						Red_basic:          "14.29%",
-						Mulligan_basic:     "4.17%",
+		recipeWeights: {
+						Mulligan: {
+									basic:         10000,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Red:      {
+									basic:         10000,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Normal:   {
+									basic:         10000,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Flying:   {
+									basic:         10000,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Ambrosia: {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
 					},
 		moves:         [
 						"Take Down",
@@ -1232,13 +1400,31 @@ app.pokeData = [
 						hpChanceWeight:     38,
 						atkChanceWeight:    57,
 					},
-		recipes:       {
-						Poison_good:        "24.52%",
-						Blue_good:          "19.71%",
-						Poison_very_good:   "18.02%",
-						Blue_very_good:     "15.41%",
-						Mulligan_good:      "4.65%",
-						Mulligan_very_good: "2.00%",
+		recipeWeights: {
+						Mulligan: {
+									basic:         0,
+									good:          10000,
+									very_good:     10000,
+									special:       0,
+								},
+						Blue:     {
+									basic:         0,
+									good:          10000,
+									very_good:     10000,
+									special:       0,
+								},
+						Poison:   {
+									basic:         0,
+									good:          10000,
+									very_good:     10000,
+									special:       0,
+								},
+						Ambrosia: {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
 					},
 		moves:         [
 						"Poison Sting",
@@ -1341,16 +1527,31 @@ app.pokeData = [
 						hpChanceWeight:     38,
 						atkChanceWeight:    57,
 					},
-		recipes:       {
-						Electric_special:   "80.00%",
-						Electric_very_good: "40.00%",
-						Yellow_special:     "18.75%",
-						Yellow_very_good:   "11.96%",
-						Electric_good:      "3.81%",
-						Mulligan_special:   "3.33%",
-						Mulligan_very_good: "2.00%",
-						Yellow_good:        "1.52%",
-						Mulligan_good:      "0.23%",
+		recipeWeights: {
+						Mulligan: {
+									basic:         0,
+									good:          500,
+									very_good:     10000,
+									special:       10000,
+								},
+						Yellow:   {
+									basic:         0,
+									good:          400,
+									very_good:     8000,
+									special:       8000,
+								},
+						Electric: {
+									basic:         0,
+									good:          400,
+									very_good:     8000,
+									special:       8000,
+								},
+						Ambrosia: {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
 					},
 		moves:         [
 						"Iron Tail",
@@ -1453,10 +1654,31 @@ app.pokeData = [
 						hpChanceWeight:     38,
 						atkChanceWeight:    57,
 					},
-		recipes:       {
-						Ground_basic:       "33.33%",
-						Yellow_basic:       "12.50%",
-						Mulligan_basic:     "4.17%",
+		recipeWeights: {
+						Mulligan: {
+									basic:         10000,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Yellow:   {
+									basic:         10000,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Ground:   {
+									basic:         10000,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Ambrosia: {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
 					},
 		moves:         [
 						"Scratch",
@@ -1559,10 +1781,31 @@ app.pokeData = [
 						hpChanceWeight:     52,
 						atkChanceWeight:    43,
 					},
-		recipes:       {
-						Gray_basic:         "25.00%",
-						Poison_basic:       "16.67%",
-						Mulligan_basic:     "4.17%",
+		recipeWeights: {
+						Mulligan: {
+									basic:         10000,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Gray:     {
+									basic:         10000,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Poison:   {
+									basic:         10000,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Ambrosia: {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
 					},
 		moves:         [
 						"Mud-Slap",
@@ -1718,10 +1961,31 @@ app.pokeData = [
 						hpChanceWeight:     43,
 						atkChanceWeight:    52,
 					},
-		recipes:       {
-						Blue_basic:         "20.00%",
-						Poison_basic:       "16.67%",
-						Mulligan_basic:     "4.17%",
+		recipeWeights: {
+						Mulligan: {
+									basic:         10000,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Blue:     {
+									basic:         10000,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Poison:   {
+									basic:         10000,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Ambrosia: {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
 					},
 		moves:         [
 						"Take Down",
@@ -1877,13 +2141,25 @@ app.pokeData = [
 						hpChanceWeight:     57,
 						atkChanceWeight:    38,
 					},
-		recipes:       {
-						Fairy_good:         "49.88%",
-						Fairy_very_good:    "47.62%",
-						Gray_good:          "12.36%",
-						Gray_very_good:     "10.26%",
-						Mulligan_good:      "4.65%",
-						Mulligan_very_good: "2.00%",
+		recipeWeights: {
+						Mulligan: {
+									basic:         0,
+									good:          10000,
+									very_good:     10000,
+									special:       0,
+								},
+						Gray:     {
+									basic:         0,
+									good:          10000,
+									very_good:     10000,
+									special:       0,
+								},
+						Ambrosia: {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
 					},
 		moves:         [
 						"Follow Me",
@@ -1986,10 +2262,31 @@ app.pokeData = [
 						hpChanceWeight:     52,
 						atkChanceWeight:    43,
 					},
-		recipes:       {
-						Fire_basic:         "50.00%",
-						Red_basic:          "14.29%",
-						Mulligan_basic:     "4.17%",
+		recipeWeights: {
+						Mulligan: {
+									basic:         10000,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Red:      {
+									basic:         10000,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Fire:     {
+									basic:         10000,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Ambrosia: {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
 					},
 		moves:         [
 						"Flamethrower",
@@ -2092,13 +2389,31 @@ app.pokeData = [
 						hpChanceWeight:     62,
 						atkChanceWeight:    33,
 					},
-		recipes:       {
-						Normal_good:        "24.53%",
-						Normal_very_good:   "18.05%",
-						Gray_good:          "12.36%",
-						Gray_very_good:     "10.26%",
-						Mulligan_good:      "4.65%",
-						Mulligan_very_good: "2.00%",
+		recipeWeights: {
+						Mulligan: {
+									basic:         0,
+									good:          10000,
+									very_good:     10000,
+									special:       0,
+								},
+						Gray:     {
+									basic:         0,
+									good:          10000,
+									very_good:     10000,
+									special:       0,
+								},
+						Normal:   {
+									basic:         0,
+									good:          10000,
+									very_good:     10000,
+									special:       0,
+								},
+						Ambrosia: {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
 					},
 		moves:         [
 						"Take Down",
@@ -2203,15 +2518,37 @@ app.pokeData = [
 						hpChanceWeight:     38,
 						atkChanceWeight:    57,
 					},
-		recipes:       {
-						Flying_good:        "49.24%",
-						Flying_very_good:   "38.17%",
-						Poison_good:        "24.52%",
-						Poison_very_good:   "18.02%",
-						Gray_good:          "12.36%",
-						Gray_very_good:     "10.26%",
-						Mulligan_good:      "4.65%",
-						Mulligan_very_good: "2.00%",
+		recipeWeights: {
+						Mulligan: {
+									basic:         0,
+									good:          10000,
+									very_good:     10000,
+									special:       0,
+								},
+						Gray:     {
+									basic:         0,
+									good:          10000,
+									very_good:     10000,
+									special:       0,
+								},
+						Poison:   {
+									basic:         0,
+									good:          10000,
+									very_good:     10000,
+									special:       0,
+								},
+						Flying:   {
+									basic:         0,
+									good:          10000,
+									very_good:     10000,
+									special:       0,
+								},
+						Ambrosia: {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
 					},
 		moves:         [
 						"Taunt",
@@ -2316,11 +2653,37 @@ app.pokeData = [
 						hpChanceWeight:     38,
 						atkChanceWeight:    57,
 					},
-		recipes:       {
-						Grass_basic:        "50.00%",
-						Gray_basic:         "25.00%",
-						Poison_basic:       "16.67%",
-						Mulligan_basic:     "4.17%",
+		recipeWeights: {
+						Mulligan: {
+									basic:         10000,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Gray:     {
+									basic:         10000,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Grass:    {
+									basic:         10000,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Poison:   {
+									basic:         10000,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Ambrosia: {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
 					},
 		moves:         [
 						"Poison Powder",
@@ -2478,15 +2841,37 @@ app.pokeData = [
 						hpChanceWeight:     38,
 						atkChanceWeight:    57,
 					},
-		recipes:       {
-						Bug_good:           "96.43%",
-						Bug_very_good:      "57.47%",
-						Grass_good:         "48.78%",
-						Grass_very_good:    "33.33%",
-						Red_good:           "16.44%",
-						Red_very_good:      "13.04%",
-						Mulligan_good:      "4.65%",
-						Mulligan_very_good: "2.00%",
+		recipeWeights: {
+						Mulligan: {
+									basic:         0,
+									good:          10000,
+									very_good:     10000,
+									special:       0,
+								},
+						Red:      {
+									basic:         0,
+									good:          10000,
+									very_good:     10000,
+									special:       0,
+								},
+						Bug:      {
+									basic:         0,
+									good:          10000,
+									very_good:     10000,
+									special:       0,
+								},
+						Grass:    {
+									basic:         0,
+									good:          10000,
+									very_good:     10000,
+									special:       0,
+								},
+						Ambrosia: {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
 					},
 		moves:         [
 						"Leech Seed",
@@ -2591,19 +2976,37 @@ app.pokeData = [
 						hpChanceWeight:     48,
 						atkChanceWeight:    48,
 					},
-		recipes:       {
-						Bug_special:        "67.57%",
-						Poison_special:     "32.26%",
-						Bug_very_good:      "28.74%",
-						Gray_special:       "28.57%",
-						Poison_very_good:   "9.01%",
-						Gray_very_good:     "5.13%",
-						Mulligan_special:   "3.33%",
-						Bug_good:           "2.41%",
-						Mulligan_very_good: "2.00%",
-						Poison_good:        "0.61%",
-						Gray_good:          "0.31%",
-						Mulligan_good:      "0.23%",
+		recipeWeights: {
+						Mulligan: {
+									basic:         0,
+									good:          500,
+									very_good:     10000,
+									special:       10000,
+								},
+						Gray:     {
+									basic:         0,
+									good:          250,
+									very_good:     5000,
+									special:       5000,
+								},
+						Bug:      {
+									basic:         0,
+									good:          250,
+									very_good:     5000,
+									special:       5000,
+								},
+						Poison:   {
+									basic:         0,
+									good:          250,
+									very_good:     5000,
+									special:       5000,
+								},
+						Ambrosia: {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
 					},
 		moves:         [
 						"String Shot",
@@ -2708,13 +3111,31 @@ app.pokeData = [
 						hpChanceWeight:     33,
 						atkChanceWeight:    62,
 					},
-		recipes:       {
-						Ground_good:        "48.78%",
-						Ground_very_good:   "33.33%",
-						Red_good:           "16.44%",
-						Red_very_good:      "13.04%",
-						Mulligan_good:      "4.65%",
-						Mulligan_very_good: "2.00%",
+		recipeWeights: {
+						Mulligan: {
+									basic:         0,
+									good:          10000,
+									very_good:     10000,
+									special:       0,
+								},
+						Red:      {
+									basic:         0,
+									good:          10000,
+									very_good:     10000,
+									special:       0,
+								},
+						Ground:   {
+									basic:         0,
+									good:          10000,
+									very_good:     10000,
+									special:       0,
+								},
+						Ambrosia: {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
 					},
 		moves:         [
 						"Dig",
@@ -2817,10 +3238,31 @@ app.pokeData = [
 						hpChanceWeight:     43,
 						atkChanceWeight:    52,
 					},
-		recipes:       {
-						Normal_basic:       "25.00%",
-						Yellow_basic:       "12.50%",
-						Mulligan_basic:     "4.17%",
+		recipeWeights: {
+						Mulligan: {
+									basic:         10000,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Yellow:   {
+									basic:         10000,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Normal:   {
+									basic:         10000,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Ambrosia: {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
 					},
 		moves:         [
 						"Scratch",
@@ -2923,10 +3365,31 @@ app.pokeData = [
 						hpChanceWeight:     38,
 						atkChanceWeight:    57,
 					},
-		recipes:       {
-						Water_basic:        "16.67%",
-						Yellow_basic:       "12.50%",
-						Mulligan_basic:     "4.17%",
+		recipeWeights: {
+						Mulligan: {
+									basic:         10000,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Yellow:   {
+									basic:         10000,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Water:    {
+									basic:         10000,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Ambrosia: {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
 					},
 		moves:         [
 						"Confuse Ray",
@@ -3029,10 +3492,31 @@ app.pokeData = [
 						hpChanceWeight:     31,
 						atkChanceWeight:    64,
 					},
-		recipes:       {
-						Fighting_basic:     "100.00%",
-						Red_basic:          "14.29%",
-						Mulligan_basic:     "4.17%",
+		recipeWeights: {
+						Mulligan: {
+									basic:         10000,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Red:      {
+									basic:         10000,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Fighting: {
+									basic:         10000,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Ambrosia: {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
 					},
 		moves:         [
 						"Taunt",
@@ -3135,10 +3619,31 @@ app.pokeData = [
 						hpChanceWeight:     38,
 						atkChanceWeight:    57,
 					},
-		recipes:       {
-						Fire_basic:         "50.00%",
-						Red_basic:          "14.29%",
-						Mulligan_basic:     "4.17%",
+		recipeWeights: {
+						Mulligan: {
+									basic:         10000,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Red:      {
+									basic:         10000,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Fire:     {
+									basic:         10000,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Ambrosia: {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
 					},
 		moves:         [
 						"Flamethrower",
@@ -3241,10 +3746,31 @@ app.pokeData = [
 						hpChanceWeight:     43,
 						atkChanceWeight:    52,
 					},
-		recipes:       {
-						Blue_basic:         "20.00%",
-						Water_basic:        "16.67%",
-						Mulligan_basic:     "4.17%",
+		recipeWeights: {
+						Mulligan: {
+									basic:         10000,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Blue:     {
+									basic:         10000,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Water:    {
+									basic:         10000,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Ambrosia: {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
 					},
 		moves:         [
 						"Bubble",
@@ -3400,10 +3926,31 @@ app.pokeData = [
 						hpChanceWeight:     29,
 						atkChanceWeight:    67,
 					},
-		recipes:       {
-						Psychic_basic:      "100.00%",
-						Yellow_basic:       "12.50%",
-						Mulligan_basic:     "4.17%",
+		recipeWeights: {
+						Mulligan: {
+									basic:         10000,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Yellow:   {
+									basic:         10000,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Psychic:  {
+									basic:         10000,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Ambrosia: {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
 					},
 		moves:         [
 						"Teleport",
@@ -3558,13 +4105,31 @@ app.pokeData = [
 						hpChanceWeight:     38,
 						atkChanceWeight:    57,
 					},
-		recipes:       {
-						Fighting_good:      "96.15%",
-						Fighting_very_good: "55.56%",
-						Blue_good:          "19.71%",
-						Blue_very_good:     "15.41%",
-						Mulligan_good:      "4.65%",
-						Mulligan_very_good: "2.00%",
+		recipeWeights: {
+						Mulligan: {
+									basic:         0,
+									good:          10000,
+									very_good:     10000,
+									special:       0,
+								},
+						Blue:     {
+									basic:         0,
+									good:          10000,
+									very_good:     10000,
+									special:       0,
+								},
+						Fighting: {
+									basic:         0,
+									good:          10000,
+									very_good:     10000,
+									special:       0,
+								},
+						Ambrosia: {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
 					},
 		moves:         [
 						"Rolling Kick",
@@ -3719,11 +4284,37 @@ app.pokeData = [
 						hpChanceWeight:     40,
 						atkChanceWeight:    55,
 					},
-		recipes:       {
-						Grass_basic:        "50.00%",
-						Poison_basic:       "16.67%",
-						Yellow_basic:       "12.50%",
-						Mulligan_basic:     "4.17%",
+		recipeWeights: {
+						Mulligan: {
+									basic:         10000,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Yellow:   {
+									basic:         10000,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Grass:    {
+									basic:         10000,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Poison:   {
+									basic:         10000,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Ambrosia: {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
 					},
 		moves:         [
 						"Razor Leaf",
@@ -3881,11 +4472,37 @@ app.pokeData = [
 						hpChanceWeight:     43,
 						atkChanceWeight:    52,
 					},
-		recipes:       {
-						Blue_basic:         "20.00%",
-						Water_basic:        "16.67%",
-						Poison_basic:       "16.67%",
-						Mulligan_basic:     "4.17%",
+		recipeWeights: {
+						Mulligan: {
+									basic:         10000,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Blue:     {
+									basic:         10000,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Water:    {
+									basic:         10000,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Poison:   {
+									basic:         10000,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Ambrosia: {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
 					},
 		moves:         [
 						"Bubble",
@@ -3990,11 +4607,37 @@ app.pokeData = [
 						hpChanceWeight:     62,
 						atkChanceWeight:    33,
 					},
-		recipes:       {
-						Rock_basic:         "50.00%",
-						Ground_basic:       "33.33%",
-						Gray_basic:         "25.00%",
-						Mulligan_basic:     "4.17%",
+		recipeWeights: {
+						Mulligan: {
+									basic:         10000,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Gray:     {
+									basic:         10000,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Rock:     {
+									basic:         10000,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Ground:   {
+									basic:         10000,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Ambrosia: {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
 					},
 		moves:         [
 						"Flail",
@@ -4152,13 +4795,31 @@ app.pokeData = [
 						hpChanceWeight:     48,
 						atkChanceWeight:    48,
 					},
-		recipes:       {
-						Fire_good:          "95.24%",
-						Yellow_good:        "91.91%",
-						Fire_very_good:     "50.00%",
-						Yellow_very_good:   "36.23%",
-						Mulligan_good:      "4.65%",
-						Mulligan_very_good: "2.00%",
+		recipeWeights: {
+						Mulligan: {
+									basic:         0,
+									good:          10000,
+									very_good:     10000,
+									special:       0,
+								},
+						Yellow:   {
+									basic:         0,
+									good:          10000,
+									very_good:     10000,
+									special:       0,
+								},
+						Fire:     {
+									basic:         0,
+									good:          10000,
+									very_good:     10000,
+									special:       0,
+								},
+						Ambrosia: {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
 					},
 		moves:         [
 						"Flame Charge",
@@ -4261,15 +4922,37 @@ app.pokeData = [
 						hpChanceWeight:     60,
 						atkChanceWeight:    36,
 					},
-		recipes:       {
-						Psychic_good:       "48.78%",
-						Psychic_very_good:  "33.33%",
-						Water_good:         "24.52%",
-						Water_very_good:    "18.02%",
-						Red_good:           "16.44%",
-						Red_very_good:      "13.04%",
-						Mulligan_good:      "4.65%",
-						Mulligan_very_good: "2.00%",
+		recipeWeights: {
+						Mulligan: {
+									basic:         0,
+									good:          10000,
+									very_good:     10000,
+									special:       0,
+								},
+						Red:      {
+									basic:         0,
+									good:          10000,
+									very_good:     10000,
+									special:       0,
+								},
+						Water:    {
+									basic:         0,
+									good:          10000,
+									very_good:     10000,
+									special:       0,
+								},
+						Psychic:  {
+									basic:         0,
+									good:          10000,
+									very_good:     10000,
+									special:       0,
+								},
+						Ambrosia: {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
 					},
 		moves:         [
 						"Tackle",
@@ -4374,13 +5057,31 @@ app.pokeData = [
 						hpChanceWeight:     38,
 						atkChanceWeight:    57,
 					},
-		recipes:       {
-						Electric_good:      "95.24%",
-						Electric_very_good: "50.00%",
-						Gray_good:          "12.36%",
-						Gray_very_good:     "10.26%",
-						Mulligan_good:      "4.65%",
-						Mulligan_very_good: "2.00%",
+		recipeWeights: {
+						Mulligan: {
+									basic:         0,
+									good:          10000,
+									very_good:     10000,
+									special:       0,
+								},
+						Gray:     {
+									basic:         0,
+									good:          10000,
+									very_good:     10000,
+									special:       0,
+								},
+						Electric: {
+									basic:         0,
+									good:          10000,
+									very_good:     10000,
+									special:       0,
+								},
+						Ambrosia: {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
 					},
 		moves:         [
 						"Flash Cannon",
@@ -4485,19 +5186,37 @@ app.pokeData = [
 						hpChanceWeight:     48,
 						atkChanceWeight:    48,
 					},
-		recipes:       {
-						Flying_special:     "72.58%",
-						Normal_special:     "29.22%",
-						Red_special:        "19.76%",
-						Flying_very_good:   "17.18%",
-						Normal_very_good:   "8.12%",
-						Red_very_good:      "4.30%",
-						Mulligan_special:   "3.33%",
-						Mulligan_very_good: "2.00%",
-						Flying_good:        "1.11%",
-						Normal_good:        "0.55%",
-						Red_good:           "0.27%",
-						Mulligan_good:      "0.23%",
+		recipeWeights: {
+						Mulligan: {
+									basic:         0,
+									good:          500,
+									very_good:     10000,
+									special:       10000,
+								},
+						Red:      {
+									basic:         0,
+									good:          225,
+									very_good:     4500,
+									special:       4500,
+								},
+						Normal:   {
+									basic:         0,
+									good:          225,
+									very_good:     4500,
+									special:       4500,
+								},
+						Flying:   {
+									basic:         0,
+									good:          225,
+									very_good:     4500,
+									special:       4500,
+								},
+						Ambrosia: {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
 					},
 		moves:         [
 						"Sky Attack",
@@ -4550,15 +5269,37 @@ app.pokeData = [
 						hpChanceWeight:     33,
 						atkChanceWeight:    62,
 					},
-		recipes:       {
-						Flying_good:        "49.24%",
-						Flying_very_good:   "38.17%",
-						Normal_good:        "24.53%",
-						Normal_very_good:   "18.05%",
-						Red_good:           "16.44%",
-						Red_very_good:      "13.04%",
-						Mulligan_good:      "4.65%",
-						Mulligan_very_good: "2.00%",
+		recipeWeights: {
+						Mulligan: {
+									basic:         0,
+									good:          10000,
+									very_good:     10000,
+									special:       0,
+								},
+						Red:      {
+									basic:         0,
+									good:          10000,
+									very_good:     10000,
+									special:       0,
+								},
+						Normal:   {
+									basic:         0,
+									good:          10000,
+									very_good:     10000,
+									special:       0,
+								},
+						Flying:   {
+									basic:         0,
+									good:          10000,
+									very_good:     10000,
+									special:       0,
+								},
+						Ambrosia: {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
 					},
 		moves:         [
 						"Take Down",
@@ -4663,13 +5404,31 @@ app.pokeData = [
 						hpChanceWeight:     52,
 						atkChanceWeight:    43,
 					},
-		recipes:       {
-						Water_good:         "24.52%",
-						Water_very_good:    "18.02%",
-						Gray_good:          "12.36%",
-						Gray_very_good:     "10.26%",
-						Mulligan_good:      "4.65%",
-						Mulligan_very_good: "2.00%",
+		recipeWeights: {
+						Mulligan: {
+									basic:         0,
+									good:          10000,
+									very_good:     10000,
+									special:       0,
+								},
+						Gray:     {
+									basic:         0,
+									good:          10000,
+									very_good:     10000,
+									special:       0,
+								},
+						Water:    {
+									basic:         0,
+									good:          10000,
+									very_good:     10000,
+									special:       0,
+								},
+						Ambrosia: {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
 					},
 		moves:         [
 						"Take Down",
@@ -4773,13 +5532,31 @@ app.pokeData = [
 						hpChanceWeight:     62,
 						atkChanceWeight:    33,
 					},
-		recipes:       {
-						Poison_good:        "24.52%",
-						Blue_good:          "19.71%",
-						Poison_very_good:   "18.02%",
-						Blue_very_good:     "15.41%",
-						Mulligan_good:      "4.65%",
-						Mulligan_very_good: "2.00%",
+		recipeWeights: {
+						Mulligan: {
+									basic:         0,
+									good:          10000,
+									very_good:     10000,
+									special:       0,
+								},
+						Blue:     {
+									basic:         0,
+									good:          10000,
+									very_good:     10000,
+									special:       0,
+								},
+						Poison:   {
+									basic:         0,
+									good:          10000,
+									very_good:     10000,
+									special:       0,
+								},
+						Ambrosia: {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
 					},
 		moves:         [
 						"Tackle",
@@ -4882,13 +5659,31 @@ app.pokeData = [
 						hpChanceWeight:     60,
 						atkChanceWeight:    36,
 					},
-		recipes:       {
-						Water_good:         "24.52%",
-						Water_very_good:    "18.02%",
-						Gray_good:          "12.36%",
-						Gray_very_good:     "10.26%",
-						Mulligan_good:      "4.65%",
-						Mulligan_very_good: "2.00%",
+		recipeWeights: {
+						Mulligan: {
+									basic:         0,
+									good:          10000,
+									very_good:     10000,
+									special:       0,
+								},
+						Gray:     {
+									basic:         0,
+									good:          10000,
+									very_good:     10000,
+									special:       0,
+								},
+						Water:    {
+									basic:         0,
+									good:          10000,
+									very_good:     10000,
+									special:       0,
+								},
+						Ambrosia: {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
 					},
 		moves:         [
 						"Withdraw",
@@ -4992,16 +5787,31 @@ app.pokeData = [
 						hpChanceWeight:     29,
 						atkChanceWeight:    67,
 					},
-		recipes:       {
-						Poison_special:     "16.13%",
-						Poison_very_good:   "4.50%",
-						Mulligan_special:   "3.33%",
-						Gray_special:       "2.86%",
-						Mulligan_very_good: "2.00%",
-						Gray_very_good:     "0.51%",
-						Poison_good:        "0.31%",
-						Mulligan_good:      "0.23%",
-						Gray_good:          "0.03%",
+		recipeWeights: {
+						Mulligan: {
+									basic:         0,
+									good:          500,
+									very_good:     10000,
+									special:       10000,
+								},
+						Gray:     {
+									basic:         0,
+									good:          125,
+									very_good:     2500,
+									special:       2500,
+								},
+						Poison:   {
+									basic:         0,
+									good:          125,
+									very_good:     2500,
+									special:       2500,
+								},
+						Ambrosia: {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
 					},
 		moves:         [
 						"Lick",
@@ -5159,15 +5969,37 @@ app.pokeData = [
 						hpChanceWeight:     60,
 						atkChanceWeight:    36,
 					},
-		recipes:       {
-						Rock_good:          "97.32%",
-						Rock_very_good:     "64.52%",
-						Ground_good:        "48.78%",
-						Ground_very_good:   "33.33%",
-						Gray_good:          "12.36%",
-						Gray_very_good:     "10.26%",
-						Mulligan_good:      "4.65%",
-						Mulligan_very_good: "2.00%",
+		recipeWeights: {
+						Mulligan: {
+									basic:         0,
+									good:          10000,
+									very_good:     10000,
+									special:       0,
+								},
+						Gray:     {
+									basic:         0,
+									good:          10000,
+									very_good:     10000,
+									special:       0,
+								},
+						Rock:     {
+									basic:         0,
+									good:          10000,
+									very_good:     10000,
+									special:       0,
+								},
+						Ground:   {
+									basic:         0,
+									good:          10000,
+									very_good:     10000,
+									special:       0,
+								},
+						Ambrosia: {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
 					},
 		moves:         [
 						"Flash Cannon",
@@ -5220,16 +6052,31 @@ app.pokeData = [
 						hpChanceWeight:     62,
 						atkChanceWeight:    33,
 					},
-		recipes:       {
-						Psychic_special:    "80.00%",
-						Psychic_very_good:  "26.67%",
-						Yellow_special:     "18.75%",
-						Yellow_very_good:   "11.96%",
-						Mulligan_special:   "3.33%",
-						Mulligan_very_good: "2.00%",
-						Psychic_good:       "1.95%",
-						Yellow_good:        "1.52%",
-						Mulligan_good:      "0.23%",
+		recipeWeights: {
+						Mulligan: {
+									basic:         0,
+									good:          500,
+									very_good:     10000,
+									special:       10000,
+								},
+						Yellow:   {
+									basic:         0,
+									good:          400,
+									very_good:     8000,
+									special:       8000,
+								},
+						Psychic:  {
+									basic:         0,
+									good:          400,
+									very_good:     8000,
+									special:       8000,
+								},
+						Ambrosia: {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
 					},
 		moves:         [
 						"Psybeam",
@@ -5332,10 +6179,31 @@ app.pokeData = [
 						hpChanceWeight:     31,
 						atkChanceWeight:    64,
 					},
-		recipes:       {
-						Water_basic:        "16.67%",
-						Red_basic:          "14.29%",
-						Mulligan_basic:     "4.17%",
+		recipeWeights: {
+						Mulligan: {
+									basic:         10000,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Red:      {
+									basic:         10000,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Water:    {
+									basic:         10000,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Ambrosia: {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
 					},
 		moves:         [
 						"Surf",
@@ -5438,10 +6306,31 @@ app.pokeData = [
 						hpChanceWeight:     52,
 						atkChanceWeight:    43,
 					},
-		recipes:       {
-						Electric_basic:     "100.00%",
-						Red_basic:          "14.29%",
-						Mulligan_basic:     "4.17%",
+		recipeWeights: {
+						Mulligan: {
+									basic:         10000,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Red:      {
+									basic:         10000,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Electric: {
+									basic:         10000,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Ambrosia: {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
 					},
 		moves:         [
 						"Self Destruct",
@@ -5544,15 +6433,37 @@ app.pokeData = [
 						hpChanceWeight:     62,
 						atkChanceWeight:    33,
 					},
-		recipes:       {
-						Grass_good:         "48.78%",
-						Psychic_good:       "48.78%",
-						Grass_very_good:    "33.33%",
-						Psychic_very_good:  "33.33%",
-						Gray_good:          "12.36%",
-						Gray_very_good:     "10.26%",
-						Mulligan_good:      "4.65%",
-						Mulligan_very_good: "2.00%",
+		recipeWeights: {
+						Mulligan: {
+									basic:         0,
+									good:          10000,
+									very_good:     10000,
+									special:       0,
+								},
+						Gray:     {
+									basic:         0,
+									good:          10000,
+									very_good:     10000,
+									special:       0,
+								},
+						Grass:    {
+									basic:         0,
+									good:          10000,
+									very_good:     10000,
+									special:       0,
+								},
+						Psychic:  {
+									basic:         0,
+									good:          10000,
+									very_good:     10000,
+									special:       0,
+								},
+						Ambrosia: {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
 					},
 		moves:         [
 						"Psychic",
@@ -5657,16 +6568,31 @@ app.pokeData = [
 						hpChanceWeight:     57,
 						atkChanceWeight:    38,
 					},
-		recipes:       {
-						Ground_special:     "100.00%",
-						Gray_special:       "57.14%",
-						Ground_very_good:   "33.33%",
-						Gray_very_good:     "10.26%",
-						Mulligan_special:   "3.33%",
-						Ground_good:        "2.44%",
-						Mulligan_very_good: "2.00%",
-						Gray_good:          "0.62%",
-						Mulligan_good:      "0.23%",
+		recipeWeights: {
+						Mulligan: {
+									basic:         0,
+									good:          500,
+									very_good:     10000,
+									special:       10000,
+								},
+						Gray:     {
+									basic:         0,
+									good:          500,
+									very_good:     10000,
+									special:       10000,
+								},
+						Ground:   {
+									basic:         0,
+									good:          500,
+									very_good:     10000,
+									special:       10000,
+								},
+						Ambrosia: {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
 					},
 		moves:         [
 						"Boomerang",
@@ -5769,16 +6695,31 @@ app.pokeData = [
 						hpChanceWeight:     27,
 						atkChanceWeight:    64,
 					},
-		recipes:       {
-						Fighting_special:   "50.00%",
-						Fighting_very_good: "22.22%",
-						Yellow_special:     "14.20%",
-						Yellow_very_good:   "9.06%",
-						Mulligan_special:   "3.33%",
-						Mulligan_very_good: "2.00%",
-						Fighting_good:      "1.92%",
-						Yellow_good:        "1.15%",
-						Mulligan_good:      "0.23%",
+		recipeWeights: {
+						Mulligan: {
+									basic:         0,
+									good:          500,
+									very_good:     10000,
+									special:       10000,
+								},
+						Yellow:   {
+									basic:         0,
+									good:          200,
+									very_good:     4000,
+									special:       4000,
+								},
+						Fighting: {
+									basic:         0,
+									good:          200,
+									very_good:     4000,
+									special:       4000,
+								},
+						Ambrosia: {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
 					},
 		moves:         [
 						"Rolling Kick",
@@ -5830,16 +6771,31 @@ app.pokeData = [
 						hpChanceWeight:     27,
 						atkChanceWeight:    64,
 					},
-		recipes:       {
-						Fighting_special:   "50.00%",
-						Fighting_very_good: "22.22%",
-						Red_special:        "14.97%",
-						Mulligan_special:   "3.33%",
-						Red_very_good:      "3.26%",
-						Mulligan_very_good: "2.00%",
-						Fighting_good:      "1.92%",
-						Mulligan_good:      "0.23%",
-						Red_good:           "0.21%",
+		recipeWeights: {
+						Mulligan: {
+									basic:         0,
+									good:          500,
+									very_good:     10000,
+									special:       10000,
+								},
+						Red:      {
+									basic:         0,
+									good:          200,
+									very_good:     4000,
+									special:       4000,
+								},
+						Fighting: {
+									basic:         0,
+									good:          200,
+									very_good:     4000,
+									special:       4000,
+								},
+						Ambrosia: {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
 					},
 		moves:         [
 						"Dynamic Punch",
@@ -5891,13 +6847,31 @@ app.pokeData = [
 						hpChanceWeight:     67,
 						atkChanceWeight:    29,
 					},
-		recipes:       {
-						Normal_good:        "24.53%",
-						Normal_very_good:   "18.05%",
-						Red_good:           "16.44%",
-						Red_very_good:      "13.04%",
-						Mulligan_good:      "4.65%",
-						Mulligan_very_good: "2.00%",
+		recipeWeights: {
+						Mulligan: {
+									basic:         0,
+									good:          10000,
+									very_good:     10000,
+									special:       0,
+								},
+						Red:      {
+									basic:         0,
+									good:          10000,
+									very_good:     10000,
+									special:       0,
+								},
+						Normal:   {
+									basic:         0,
+									good:          10000,
+									very_good:     10000,
+									special:       0,
+								},
+						Ambrosia: {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
 					},
 		moves:         [
 						"Lick",
@@ -5949,13 +6923,31 @@ app.pokeData = [
 						hpChanceWeight:     45,
 						atkChanceWeight:    50,
 					},
-		recipes:       {
-						Poison_good:        "24.52%",
-						Blue_good:          "19.71%",
-						Poison_very_good:   "18.02%",
-						Blue_very_good:     "15.41%",
-						Mulligan_good:      "4.65%",
-						Mulligan_very_good: "2.00%",
+		recipeWeights: {
+						Mulligan: {
+									basic:         0,
+									good:          10000,
+									very_good:     10000,
+									special:       0,
+								},
+						Blue:     {
+									basic:         0,
+									good:          10000,
+									very_good:     10000,
+									special:       0,
+								},
+						Poison:   {
+									basic:         0,
+									good:          10000,
+									very_good:     10000,
+									special:       0,
+								},
+						Ambrosia: {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
 					},
 		moves:         [
 						"Flamethrower",
@@ -6058,11 +7050,37 @@ app.pokeData = [
 						hpChanceWeight:     57,
 						atkChanceWeight:    38,
 					},
-		recipes:       {
-						Rock_basic:         "50.00%",
-						Ground_basic:       "33.33%",
-						Gray_basic:         "25.00%",
-						Mulligan_basic:     "4.17%",
+		recipeWeights: {
+						Mulligan: {
+									basic:         10000,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Gray:     {
+									basic:         10000,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Ground:   {
+									basic:         10000,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Rock:     {
+									basic:         10000,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Ambrosia: {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
 					},
 		moves:         [
 						"Roar",
@@ -6167,16 +7185,31 @@ app.pokeData = [
 						hpChanceWeight:     68,
 						atkChanceWeight:    23,
 					},
-		recipes:       {
-						Normal_special:     "3.90%",
-						Mulligan_special:   "3.33%",
-						Gray_special:       "2.86%",
-						Mulligan_very_good: "2.00%",
-						Normal_very_good:   "1.08%",
-						Gray_very_good:     "0.51%",
-						Mulligan_good:      "0.23%",
-						Normal_good:        "0.07%",
-						Gray_good:          "0.03%",
+		recipeWeights: {
+						Mulligan: {
+									basic:         0,
+									good:          500,
+									very_good:     10000,
+									special:       10000,
+								},
+						Gray:     {
+									basic:         0,
+									good:          30,
+									very_good:     600,
+									special:       600,
+								},
+						Normal:   {
+									basic:         0,
+									good:          30,
+									very_good:     600,
+									special:       600,
+								},
+						Ambrosia: {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
 					},
 		moves:         [
 						"Take Down",
@@ -6228,16 +7261,31 @@ app.pokeData = [
 						hpChanceWeight:     48,
 						atkChanceWeight:    48,
 					},
-		recipes:       {
-						Grass_special:      "20.00%",
-						Grass_very_good:    "6.67%",
-						Blue_special:       "4.03%",
-						Mulligan_special:   "3.33%",
-						Mulligan_very_good: "2.00%",
-						Blue_very_good:     "0.92%",
-						Grass_good:         "0.49%",
-						Mulligan_good:      "0.23%",
-						Blue_good:          "0.06%",
+		recipeWeights: {
+						Mulligan: {
+									basic:         0,
+									good:          500,
+									very_good:     10000,
+									special:       10000,
+								},
+						Blue:     {
+									basic:         0,
+									good:          100,
+									very_good:     2000,
+									special:       2000,
+								},
+						Grass:    {
+									basic:         0,
+									good:          100,
+									very_good:     2000,
+									special:       2000,
+								},
+						Ambrosia: {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
 					},
 		moves:         [
 						"Vine Whip",
@@ -6289,16 +7337,31 @@ app.pokeData = [
 						hpChanceWeight:     45,
 						atkChanceWeight:    45,
 					},
-		recipes:       {
-						Normal_special:     "32.47%",
-						Yellow_special:     "14.20%",
-						Yellow_very_good:   "9.06%",
-						Normal_very_good:   "9.03%",
-						Mulligan_special:   "3.33%",
-						Mulligan_very_good: "2.00%",
-						Yellow_good:        "1.15%",
-						Normal_good:        "0.61%",
-						Mulligan_good:      "0.23%",
+		recipeWeights: {
+						Mulligan: {
+									basic:         0,
+									good:          500,
+									very_good:     10000,
+									special:       10000,
+								},
+						Yellow:   {
+									basic:         0,
+									good:          250,
+									very_good:     5000,
+									special:       5000,
+								},
+						Normal:   {
+									basic:         0,
+									good:          250,
+									very_good:     5000,
+									special:       5000,
+								},
+						Ambrosia: {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
 					},
 		moves:         [
 						"Take Down",
@@ -6350,13 +7413,31 @@ app.pokeData = [
 						hpChanceWeight:     43,
 						atkChanceWeight:    52,
 					},
-		recipes:       {
-						Water_good:         "24.52%",
-						Blue_good:          "19.71%",
-						Water_very_good:    "18.02%",
-						Blue_very_good:     "15.41%",
-						Mulligan_good:      "4.65%",
-						Mulligan_very_good: "2.00%",
+		recipeWeights: {
+						Mulligan: {
+									basic:         0,
+									good:          10000,
+									very_good:     10000,
+									special:       0,
+								},
+						Blue:     {
+									basic:         0,
+									good:          10000,
+									very_good:     10000,
+									special:       0,
+								},
+						Water:    {
+									basic:         0,
+									good:          10000,
+									very_good:     10000,
+									special:       0,
+								},
+						Ambrosia: {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
 					},
 		moves:         [
 						"Bubble",
@@ -6459,10 +7540,31 @@ app.pokeData = [
 						hpChanceWeight:     36,
 						atkChanceWeight:    60,
 					},
-		recipes:       {
-						Water_basic:        "16.67%",
-						Red_basic:          "14.29%",
-						Mulligan_basic:     "4.17%",
+		recipeWeights: {
+						Mulligan: {
+									basic:         10000,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Red:      {
+									basic:         10000,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Water:    {
+									basic:         10000,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Ambrosia: {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
 					},
 		moves:         [
 						"Splash",
@@ -6565,10 +7667,31 @@ app.pokeData = [
 						hpChanceWeight:     31,
 						atkChanceWeight:    64,
 					},
-		recipes:       {
-						Water_basic:        "16.67%",
-						Yellow_basic:       "12.50%",
-						Mulligan_basic:     "4.17%",
+		recipeWeights: {
+						Mulligan: {
+									basic:         10000,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Yellow:   {
+									basic:         10000,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Water:    {
+									basic:         10000,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Ambrosia: {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
 					},
 		moves:         [
 						"Icy Wind",
@@ -6672,16 +7795,31 @@ app.pokeData = [
 						hpChanceWeight:     62,
 						atkChanceWeight:    33,
 					},
-		recipes:       {
-						Psychic_special:    "10.00%",
-						Mulligan_special:   "3.33%",
-						Psychic_very_good:  "3.33%",
-						Gray_special:       "2.86%",
-						Mulligan_very_good: "2.00%",
-						Gray_very_good:     "0.51%",
-						Psychic_good:       "0.24%",
-						Mulligan_good:      "0.23%",
-						Gray_good:          "0.03%",
+		recipeWeights: {
+						Mulligan: {
+									basic:         0,
+									good:          500,
+									very_good:     10000,
+									special:       10000,
+								},
+						Gray:     {
+									basic:         0,
+									good:          50,
+									very_good:     1000,
+									special:       1000,
+								},
+						Psychic:  {
+									basic:         0,
+									good:          50,
+									very_good:     1000,
+									special:       1000,
+								},
+						Ambrosia: {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
 					},
 		moves:         [
 						"Substitute",
@@ -6734,19 +7872,37 @@ app.pokeData = [
 						hpChanceWeight:     23,
 						atkChanceWeight:    68,
 					},
-		recipes:       {
-						Flying_special:     "19.35%",
-						Bug_special:        "16.22%",
-						Bug_very_good:      "6.90%",
-						Yellow_special:     "5.11%",
-						Flying_very_good:   "4.58%",
-						Mulligan_special:   "3.33%",
-						Yellow_very_good:   "3.26%",
-						Mulligan_very_good: "2.00%",
-						Bug_good:           "0.58%",
-						Yellow_good:        "0.41%",
-						Flying_good:        "0.30%",
-						Mulligan_good:      "0.23%",
+		recipeWeights: {
+						Mulligan: {
+									basic:         0,
+									good:          500,
+									very_good:     10000,
+									special:       10000,
+								},
+						Yellow:   {
+									basic:         0,
+									good:          60,
+									very_good:     1200,
+									special:       1200,
+								},
+						Bug:      {
+									basic:         0,
+									good:          60,
+									very_good:     1200,
+									special:       1200,
+								},
+						Flying:   {
+									basic:         0,
+									good:          60,
+									very_good:     1200,
+									special:       1200,
+								},
+						Ambrosia: {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
 					},
 		moves:         [
 						"Lunge",
@@ -6799,16 +7955,31 @@ app.pokeData = [
 						hpChanceWeight:     31,
 						atkChanceWeight:    64,
 					},
-		recipes:       {
-						Psychic_special:    "10.00%",
-						Red_special:        "3.59%",
-						Mulligan_special:   "3.33%",
-						Psychic_very_good:  "3.33%",
-						Mulligan_very_good: "2.00%",
-						Red_very_good:      "0.78%",
-						Psychic_good:       "0.24%",
-						Mulligan_good:      "0.23%",
-						Red_good:           "0.05%",
+		recipeWeights: {
+						Mulligan: {
+									basic:         0,
+									good:          500,
+									very_good:     10000,
+									special:       10000,
+								},
+						Red:      {
+									basic:         0,
+									good:          50,
+									very_good:     1000,
+									special:       1000,
+								},
+						Psychic:  {
+									basic:         0,
+									good:          50,
+									very_good:     1000,
+									special:       1000,
+								},
+						Ambrosia: {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
 					},
 		moves:         [
 						"Psychic",
@@ -6861,16 +8032,31 @@ app.pokeData = [
 						hpChanceWeight:     43,
 						atkChanceWeight:    52,
 					},
-		recipes:       {
-						Electric_special:   "20.00%",
-						Electric_very_good: "10.00%",
-						Yellow_special:     "5.11%",
-						Mulligan_special:   "3.33%",
-						Yellow_very_good:   "3.26%",
-						Mulligan_very_good: "2.00%",
-						Electric_good:      "0.95%",
-						Yellow_good:        "0.41%",
-						Mulligan_good:      "0.23%",
+		recipeWeights: {
+						Mulligan: {
+									basic:         0,
+									good:          500,
+									very_good:     10000,
+									special:       10000,
+								},
+						Yellow:   {
+									basic:         0,
+									good:          100,
+									very_good:     2000,
+									special:       2000,
+								},
+						Electric: {
+									basic:         0,
+									good:          100,
+									very_good:     2000,
+									special:       2000,
+								},
+						Ambrosia: {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
 					},
 		moves:         [
 						"Thunder",
@@ -6922,16 +8108,31 @@ app.pokeData = [
 						hpChanceWeight:     33,
 						atkChanceWeight:    62,
 					},
-		recipes:       {
-						Red_special:        "3.59%",
-						Mulligan_special:   "3.33%",
-						Fire_special:       "2.56%",
-						Mulligan_very_good: "2.00%",
-						Fire_very_good:     "1.01%",
-						Red_very_good:      "0.78%",
-						Mulligan_good:      "0.23%",
-						Fire_good:          "0.08%",
-						Red_good:           "0.05%",
+		recipeWeights: {
+						Mulligan: {
+									basic:         0,
+									good:          500,
+									very_good:     10000,
+									special:       10000,
+								},
+						Red:      {
+									basic:         0,
+									good:          100,
+									very_good:     2000,
+									special:       2000,
+								},
+						Fire:     {
+									basic:         0,
+									good:          100,
+									very_good:     2000,
+									special:       2000,
+								},
+						Ambrosia: {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
 					},
 		moves:         [
 						"Flamethrower",
@@ -6984,16 +8185,31 @@ app.pokeData = [
 						hpChanceWeight:     23,
 						atkChanceWeight:    68,
 					},
-		recipes:       {
-						Red_special:        "3.59%",
-						Mulligan_special:   "3.33%",
-						Mulligan_very_good: "2.00%",
-						Bug_special:        "1.54%",
-						Red_very_good:      "0.78%",
-						Bug_very_good:      "0.61%",
-						Mulligan_good:      "0.23%",
-						Red_good:           "0.05%",
-						Bug_good:           "0.05%",
+		recipeWeights: {
+						Mulligan: {
+									basic:         0,
+									good:          500,
+									very_good:     10000,
+									special:       10000,
+								},
+						Red:      {
+									basic:         0,
+									good:          60,
+									very_good:     1200,
+									special:       1200,
+								},
+						Bug:      {
+									basic:         0,
+									good:          60,
+									very_good:     1200,
+									special:       1200,
+								},
+						Ambrosia: {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
 					},
 		moves:         [
 						"Take Down",
@@ -7046,16 +8262,31 @@ app.pokeData = [
 						hpChanceWeight:     32,
 						atkChanceWeight:    59,
 					},
-		recipes:       {
-						Normal_special:     "3.90%",
-						Mulligan_special:   "3.33%",
-						Gray_special:       "2.86%",
-						Mulligan_very_good: "2.00%",
-						Normal_very_good:   "1.08%",
-						Gray_very_good:     "0.51%",
-						Mulligan_good:      "0.23%",
-						Normal_good:        "0.07%",
-						Gray_good:          "0.03%",
+		recipeWeights: {
+						Mulligan: {
+									basic:         0,
+									good:          500,
+									very_good:     10000,
+									special:       10000,
+								},
+						Gray:     {
+									basic:         0,
+									good:          30,
+									very_good:     600,
+									special:       600,
+								},
+						Normal:   {
+									basic:         0,
+									good:          30,
+									very_good:     600,
+									special:       600,
+								},
+						Ambrosia: {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
 					},
 		moves:         [
 						"Hyper Beam",
@@ -7107,16 +8338,31 @@ app.pokeData = [
 						hpChanceWeight:     48,
 						atkChanceWeight:    48,
 					},
-		recipes:       {
-						Blue_special:       "33.56%",
-						Water_special:      "25.81%",
-						Blue_very_good:     "7.70%",
-						Water_very_good:    "7.21%",
-						Mulligan_special:   "3.33%",
-						Mulligan_very_good: "2.00%",
-						Blue_good:          "0.49%",
-						Water_good:         "0.49%",
-						Mulligan_good:      "0.23%",
+		recipeWeights: {
+						Mulligan: {
+									basic:         0,
+									good:          500,
+									very_good:     10000,
+									special:       10000,
+								},
+						Blue:     {
+									basic:         0,
+									good:          200,
+									very_good:     4000,
+									special:       4000,
+								},
+						Water:    {
+									basic:         0,
+									good:          200,
+									very_good:     4000,
+									special:       4000,
+								},
+						Ambrosia: {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
 					},
 		moves:         [
 						"Splash",
@@ -7219,16 +8465,31 @@ app.pokeData = [
 						hpChanceWeight:     64,
 						atkChanceWeight:    27,
 					},
-		recipes:       {
-						Water_special:      "16.13%",
-						Water_very_good:    "4.50%",
-						Blue_special:       "4.03%",
-						Mulligan_special:   "3.33%",
-						Mulligan_very_good: "2.00%",
-						Blue_very_good:     "0.92%",
-						Water_good:         "0.31%",
-						Mulligan_good:      "0.23%",
-						Blue_good:          "0.06%",
+		recipeWeights: {
+						Mulligan: {
+									basic:         0,
+									good:          500,
+									very_good:     10000,
+									special:       10000,
+								},
+						Blue:     {
+									basic:         0,
+									good:          125,
+									very_good:     2500,
+									special:       2500,
+								},
+						Water:    {
+									basic:         0,
+									good:          125,
+									very_good:     2500,
+									special:       2500,
+								},
+						Ambrosia: {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
 					},
 		moves:         [
 						"Hydro Pump",
@@ -7281,16 +8542,31 @@ app.pokeData = [
 						hpChanceWeight:     48,
 						atkChanceWeight:    48,
 					},
-		recipes:       {
-						Blue_special:       "4.03%",
-						Normal_special:     "3.90%",
-						Mulligan_special:   "3.33%",
-						Mulligan_very_good: "2.00%",
-						Normal_very_good:   "1.08%",
-						Blue_very_good:     "0.92%",
-						Mulligan_good:      "0.23%",
-						Normal_good:        "0.07%",
-						Blue_good:          "0.06%",
+		recipeWeights: {
+						Mulligan: {
+									basic:         0,
+									good:          500,
+									very_good:     10000,
+									special:       10000,
+								},
+						Blue:     {
+									basic:         0,
+									good:          30,
+									very_good:     600,
+									special:       600,
+								},
+						Normal:   {
+									basic:         0,
+									good:          30,
+									very_good:     600,
+									special:       600,
+								},
+						Ambrosia: {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
 					},
 		moves:         [
 						"Transform",
@@ -7333,16 +8609,31 @@ app.pokeData = [
 						hpChanceWeight:     48,
 						atkChanceWeight:    48,
 					},
-		recipes:       {
-						Normal_special:     "22.73%",
-						Red_special:        "19.76%",
-						Normal_very_good:   "6.32%",
-						Red_very_good:      "4.30%",
-						Mulligan_special:   "3.33%",
-						Mulligan_very_good: "2.00%",
-						Normal_good:        "0.43%",
-						Red_good:           "0.27%",
-						Mulligan_good:      "0.23%",
+		recipeWeights: {
+						Mulligan: {
+									basic:         0,
+									good:          500,
+									very_good:     10000,
+									special:       10000,
+								},
+						Red:      {
+									basic:         0,
+									good:          175,
+									very_good:     3500,
+									special:       3500,
+								},
+						Normal:   {
+									basic:         0,
+									good:          175,
+									very_good:     3500,
+									special:       3500,
+								},
+						Ambrosia: {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
 					},
 		moves:         [
 						"Flail",
@@ -7553,13 +8844,31 @@ app.pokeData = [
 						hpChanceWeight:     48,
 						atkChanceWeight:    48,
 					},
-		recipes:       {
-						Normal_good:        "24.53%",
-						Normal_very_good:   "18.05%",
-						Red_good:           "16.44%",
-						Red_very_good:      "13.04%",
-						Mulligan_good:      "4.65%",
-						Mulligan_very_good: "2.00%",
+		recipeWeights: {
+						Mulligan: {
+									basic:         0,
+									good:          10000,
+									very_good:     10000,
+									special:       0,
+								},
+						Red:      {
+									basic:         0,
+									good:          10000,
+									very_good:     10000,
+									special:       0,
+								},
+						Normal:   {
+									basic:         0,
+									good:          10000,
+									very_good:     10000,
+									special:       0,
+								},
+						Ambrosia: {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
 					},
 		moves:         [
 						"Thunderbolt",
@@ -7611,19 +8920,37 @@ app.pokeData = [
 						hpChanceWeight:     57,
 						atkChanceWeight:    38,
 					},
-		recipes:       {
-						Rock_special:       "45.45%",
-						Blue_special:       "16.78%",
-						Rock_very_good:     "16.13%",
-						Water_special:      "16.13%",
-						Water_very_good:    "4.50%",
-						Blue_very_good:     "3.85%",
-						Mulligan_special:   "3.33%",
-						Mulligan_very_good: "2.00%",
-						Rock_good:          "1.22%",
-						Water_good:         "0.31%",
-						Blue_good:          "0.25%",
-						Mulligan_good:      "0.23%",
+		recipeWeights: {
+						Mulligan: {
+									basic:         0,
+									good:          500,
+									very_good:     10000,
+									special:       10000,
+								},
+						Blue:     {
+									basic:         0,
+									good:          125,
+									very_good:     2500,
+									special:       2500,
+								},
+						Rock:     {
+									basic:         0,
+									good:          125,
+									very_good:     2500,
+									special:       2500,
+								},
+						Water:    {
+									basic:         0,
+									good:          125,
+									very_good:     2500,
+									special:       2500,
+								},
+						Ambrosia: {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
 					},
 		moves:         [
 						"Bubble",
@@ -7728,19 +9055,37 @@ app.pokeData = [
 						hpChanceWeight:     60,
 						atkChanceWeight:    36,
 					},
-		recipes:       {
-						Rock_special:       "45.45%",
-						Rock_very_good:     "16.13%",
-						Water_special:      "16.13%",
-						Red_special:        "14.97%",
-						Water_very_good:    "4.50%",
-						Mulligan_special:   "3.33%",
-						Red_very_good:      "3.26%",
-						Mulligan_very_good: "2.00%",
-						Rock_good:          "1.22%",
-						Water_good:         "0.31%",
-						Mulligan_good:      "0.23%",
-						Red_good:           "0.21%",
+		recipeWeights: {
+						Mulligan: {
+									basic:         0,
+									good:          500,
+									very_good:     10000,
+									special:       10000,
+								},
+						Red:      {
+									basic:         0,
+									good:          125,
+									very_good:     2500,
+									special:       2500,
+								},
+						Rock:     {
+									basic:         0,
+									good:          125,
+									very_good:     2500,
+									special:       2500,
+								},
+						Water:    {
+									basic:         0,
+									good:          125,
+									very_good:     2500,
+									special:       2500,
+								},
+						Ambrosia: {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
 					},
 		moves:         [
 						"Aqua Jet",
@@ -7845,19 +9190,37 @@ app.pokeData = [
 						hpChanceWeight:     23,
 						atkChanceWeight:    68,
 					},
-		recipes:       {
-						Rock_special:       "9.09%",
-						Flying_special:     "8.06%",
-						Mulligan_special:   "3.33%",
-						Rock_very_good:     "3.23%",
-						Gray_special:       "2.86%",
-						Mulligan_very_good: "2.00%",
-						Flying_very_good:   "1.91%",
-						Gray_very_good:     "0.51%",
-						Rock_good:          "0.24%",
-						Mulligan_good:      "0.23%",
-						Flying_good:        "0.12%",
-						Gray_good:          "0.03%",
+		recipeWeights: {
+						Mulligan: {
+									basic:         0,
+									good:          500,
+									very_good:     10000,
+									special:       10000,
+								},
+						Gray:     {
+									basic:         0,
+									good:          25,
+									very_good:     500,
+									special:       500,
+								},
+						Rock:     {
+									basic:         0,
+									good:          25,
+									very_good:     500,
+									special:       500,
+								},
+						Flying:   {
+									basic:         0,
+									good:          25,
+									very_good:     500,
+									special:       500,
+								},
+						Ambrosia: {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
 					},
 		moves:         [
 						"Crunch",
@@ -7910,16 +9273,31 @@ app.pokeData = [
 						hpChanceWeight:     59,
 						atkChanceWeight:    32,
 					},
-		recipes:       {
-						Yellow_special:     "5.11%",
-						Normal_special:     "3.90%",
-						Mulligan_special:   "3.33%",
-						Yellow_very_good:   "3.26%",
-						Mulligan_very_good: "2.00%",
-						Normal_very_good:   "1.08%",
-						Yellow_good:        "0.41%",
-						Mulligan_good:      "0.23%",
-						Normal_good:        "0.07%",
+		recipeWeights: {
+						Mulligan: {
+									basic:         0,
+									good:          500,
+									very_good:     10000,
+									special:       10000,
+								},
+						Yellow:   {
+									basic:         0,
+									good:          30,
+									very_good:     600,
+									special:       600,
+								},
+						Normal:   {
+									basic:         0,
+									good:          30,
+									very_good:     600,
+									special:       600,
+								},
+						Ambrosia: {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
 					},
 		moves:         [
 						"Take Down",
@@ -7971,10 +9349,31 @@ app.pokeData = [
 						hpChanceWeight:     48,
 						atkChanceWeight:    39,
 					},
-		recipes:       {
-						Ambrosia_good:      "33.33%",
-						Ambrosia_very_good: "33.33%",
-						Ambrosia_special:   "15.87%",
+		recipeWeights: {
+						Mulligan: {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Blue:     {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Flying:   {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Ambrosia: {
+									basic:         100,
+									good:          100,
+									very_good:     100,
+									special:       100,
+								},
 					},
 		moves:         [
 						"Sky Attack",
@@ -8027,10 +9426,37 @@ app.pokeData = [
 						hpChanceWeight:     35,
 						atkChanceWeight:    52,
 					},
-		recipes:       {
-						Ambrosia_good:      "33.33%",
-						Ambrosia_very_good: "33.33%",
-						Ambrosia_special:   "15.87%",
+		recipeWeights: {
+						Mulligan: {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Yellow:   {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Electric: {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Flying:   {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Ambrosia: {
+									basic:         100,
+									good:          100,
+									very_good:     100,
+									special:       100,
+								},
 					},
 		moves:         [
 						"Sky Attack",
@@ -8083,10 +9509,37 @@ app.pokeData = [
 						hpChanceWeight:     43,
 						atkChanceWeight:    43,
 					},
-		recipes:       {
-						Ambrosia_good:      "33.33%",
-						Ambrosia_very_good: "33.33%",
-						Ambrosia_special:   "15.87%",
+		recipeWeights: {
+						Mulligan: {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Red:      {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Fire:     {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Flying:   {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Ambrosia: {
+									basic:         100,
+									good:          100,
+									very_good:     100,
+									special:       100,
+								},
 					},
 		moves:         [
 						"Sky Attack",
@@ -8139,13 +9592,25 @@ app.pokeData = [
 						hpChanceWeight:     38,
 						atkChanceWeight:    57,
 					},
-		recipes:       {
-						Blue_special:       "4.03%",
-						Mulligan_special:   "3.33%",
-						Mulligan_very_good: "2.00%",
-						Blue_very_good:     "0.92%",
-						Mulligan_good:      "0.23%",
-						Blue_good:          "0.06%",
+		recipeWeights: {
+						Mulligan: {
+									basic:         0,
+									good:          500,
+									very_good:     10000,
+									special:       10000,
+								},
+						Blue:     {
+									basic:         0,
+									good:          500,
+									very_good:     10000,
+									special:       10000,
+								},
+						Ambrosia: {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
 					},
 		moves:         [
 						"Agility",
@@ -8301,8 +9766,31 @@ app.pokeData = [
 						hpChanceWeight:     37,
 						atkChanceWeight:    50,
 					},
-		recipes:       {
-						Ambrosia_special:   "47.62%",
+		recipeWeights: {
+						Mulligan: {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Gray:     {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Psychic:  {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Ambrosia: {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       300,
+								},
 					},
 		moves:         [
 						"Psychic",
@@ -8354,8 +9842,31 @@ app.pokeData = [
 						hpChanceWeight:     43,
 						atkChanceWeight:    43,
 					},
-		recipes:       {
-						Ambrosia_special:   "4.76%",
+		recipeWeights: {
+						Mulligan: {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Red:      {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Psychic:  {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       0,
+								},
+						Ambrosia: {
+									basic:         0,
+									good:          0,
+									very_good:     0,
+									special:       30,
+								},
 					},
 		moves:         [
 						"Psychic",
