@@ -44,7 +44,7 @@ footer {
 .search {
 	display: flex;
 	flex-direction: column;
-	width: 280px;
+	width: 300px;
 	margin: 5px;
 	background: #ffffff11;
 	border: 2px solid black;
@@ -72,7 +72,7 @@ html:not(.compact) .pokedata {
 	}
 
 	.pokedata .group > .data {
-		margin: 10px;
+		margin: 5px;
 	}
 }
 
@@ -225,6 +225,8 @@ input {
 .pokedata details.group > summary.title {
 	cursor: pointer;
 	transition: all .2s ease;
+	/*font-weight: bold;*/
+	font-size: 20px;
 }
 .pokedata details.group > summary.title:hover {
 	background-color: rgba(255,255,255,0.5);
@@ -235,10 +237,11 @@ input {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-around;
-	margin: 15px;
+	margin: 10px;
 }
 
 .pokedata table {
+	margin: 5px;
 	font-size: 15px;
 	/*font-size: 10px;*/ /* do this? */
 	border: 2px solid black;
@@ -248,7 +251,8 @@ input {
 .pokedata table th,
 .pokedata table td {
 	/*padding: 0px 15px 0px 5px;*/
-	padding: 5px;
+	padding-left: 5px;
+	padding-right: 5px;
 }
 /*.pokedata table td:last-child {
 	padding: 0px 10px 0px 5px;
@@ -281,7 +285,7 @@ input {
 	margin-bottom: 5px;
 }
 .pokedata .stoneslots .input input {
-	/*width: 50px;*/
+	width: 75px;
 	border-radius: 5px;
 	text-align: center;
 }
