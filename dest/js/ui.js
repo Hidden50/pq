@@ -100,11 +100,21 @@ app.components.pokedata = {
 		this.moves.innerHTML = (
 			evolutions
 				.map( evo => (
-					`<table><tr><th>${
+					`<table><tr><th colspan="2">${
 						evo.name
-					}</th></tr><tr><td>${
-						evo.moves.join("</td></tr><tr><td>")
-					}</td></tr></table>`
+					}</th></tr>${
+						evo.moves.map( move => {
+							const id = move
+								.toLowerCase()
+								.replace(/[^a-z0-9]+/g, '');
+
+							return `<tr><td>${
+								move
+							}</td><td>${
+								app.moveData[id].tierlistRank
+							}</td></tr>`;
+						}).join("")
+					}</table>`
 				))
 				.join("")
 		);
