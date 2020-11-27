@@ -337,7 +337,7 @@ app.moveData = {
 		type:          "Fighting",
 		stoneOptions:  "110100",
 		ingameDesc:    "The user gets right up on enemies in front of itself and smacks them with a single blow, damaging them. Sometimes raises the amount of damage the user takes.",
-		tierlistRank:  "A-",
+		tierlistRank:  "S+/A-",
 		power:         245,
 		cooldown:      5,
 	},
