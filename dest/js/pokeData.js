@@ -6595,7 +6595,7 @@ app.pokeData = [
 								},
 					},
 		moves:         [
-						"Boomerang",
+						"Bonemerang",
 						"Growl",
 						"Sandstorm",
 						"Focus Energy",
@@ -6646,7 +6646,7 @@ app.pokeData = [
 						atkChanceWeight:    43,
 					},
 		moves:         [
-						"Boomerang",
+						"Bonemerang",
 						"Growl",
 						"Sandstorm",
 						"Focus Energy",
