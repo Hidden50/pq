@@ -4,6 +4,7 @@ app.components = {};
 
 app.components.search = {
 	container: document.querySelector(".search"),
+	title: document.querySelector(".search .title"),
 	input: document.querySelector(".search input"),
 	results: document.querySelector(".search .results"),
 };
@@ -401,8 +402,7 @@ window.addEventListener('load', () => {
 		e.stopPropagation();
 	});
 
-	const title = document.body.querySelector(".search .title");
-	title.addEventListener( 'click', e => {
+	app.components.search.title.addEventListener( 'click', e => {
 		window.location.reload();
 	});
 });
