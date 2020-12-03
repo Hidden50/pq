@@ -11,13 +11,7 @@ img, button {
 	background: #7fb6e0;
 }
 
-* {
-	/* food for thought: */
-	/*border-radius: 0px !important;*/
-}
-
 html {
-	/*from tailwind*/
 	font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
 }
 
@@ -27,7 +21,6 @@ html, body {
 	height: 100%;
 	margin: 0px;
 	padding: 0px;
-	/*background: #7fb6e0;*/
 	background: rgba(127, 182, 224, 0.5);
 }
 
@@ -80,8 +73,6 @@ html:not(.compact) .pokedata {
 	font-size: 30px;
 	font-weight: 600;
 	margin: 10px;
-	/*padding-bottom: 10px;*/
-	/*border-bottom: 1px solid black;*/
 	text-align: center;
 	cursor: pointer;
 }
@@ -103,17 +94,13 @@ input {
 }
 *:focus {
 	outline: none !important;
-	/*from tailwind*/
 	box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
 }
 .search input {
 	align-self: center;
-	/*width: calc(33% + 150px);*/
 	width: max(50%,200px);
 	margin: 10px;
-	/*padding: 10px;*/
 	border-radius: 5px;
-	/*border: 2px solid black;*/
 }
 .search .results {
 	display: flex;
@@ -173,16 +160,9 @@ input {
 	height: 25px;
 	text-align: center;
 	border-radius: 5px;
-	/*border: 2px solid #bbbbbb;*/
 	margin-left: auto;
 	background-color: white;
 	transition: all .2s ease;
-}
-.btn-close {
-	/*background: #f63333;*/
-}
-.btn-add {
-	/*background: #66f666;*/
 }
 .btn-add::after {
 	font-weight: bold;
@@ -193,10 +173,6 @@ input {
 	font-weight: bold;
 	content: 'x';
 	color: black;
-}
-.btn-add:hover::after,
-.btn-close:hover::after {
-	/*color: white;*/
 }
 .btn-add:hover,
 .btn-close:hover {
@@ -225,7 +201,6 @@ input {
 .pokedata details.group > summary.title {
 	cursor: pointer;
 	transition: all .2s ease;
-	/*font-weight: bold;*/
 	font-size: 20px;
 }
 .pokedata details.group > summary.title:hover {
@@ -243,29 +218,18 @@ input {
 .pokedata table {
 	margin: 5px;
 	font-size: 15px;
-	/*font-size: 10px;*/ /* do this? */
 	border: 2px solid black;
-	border-radius: 0px; /* better to contrast the table with other borders, if you do want a radius use 5px for consistency */
 	cursor: default;
 }
 .pokedata table th,
 .pokedata table td {
-	/*padding: 0px 15px 0px 5px;*/
-	padding-left: 5px;
-	padding-right: 5px;
+	padding: 0px 5px;
 }
-/*.pokedata table td:last-child {
-	padding: 0px 10px 0px 5px;
-}*/
 .pokedata table tr:nth-child(even) {
 	background-color: #f2f2f2;
 }
 .pokedata table tr:nth-child(odd) {
 	background-color: #f2f2f2cc;
-}
-.pokedata table tr:hover {
-	/* unnecessary (and potentially confusing) */
-	/*background-color: #eeeeee;*/
 }
 
 .pokedata .recipes table td:nth-child(3) {
@@ -289,8 +253,9 @@ input {
 	border-radius: 5px;
 	text-align: center;
 }
-.pokedata .stoneslots table tr:first-child td {
-	max-width: 240px; /* is this even relevant? */
+.pokedata .stoneslots .output tr:first-child td {
+	/* make info-text reasonably wide */
+	max-width: 240px;
 }
 .pokedata .stoneslots table td:nth-child(2) {
 	text-align: right;
@@ -318,26 +283,10 @@ input {
 }
 
 .faces {
-	/*padding: 10px;*/
-	/*margin: 3px;*/
-	/*border: 1px solid rgba(0, 0, 0, 0.4);*/
-	/*border: 2px solid rgba(0, 0, 0, 0.4);*/
-	border-radius: 5px;
-	/*border-radius: 50%;*/ /* food for thought... */
 	transition: all .2s ease;
 }
 .results .faces:hover {
-	/* pick one: */
-
-	/*opacity: 0.75;*/
-
-/*	border: 2px solid black;
-	box-sizing: border-box;*/
-
 	box-shadow: 5px 5px 0px black;
-
-	/*border-radius: 50%;*/
-
 	transform: scale(0.9) translateY(2.25px);
 }
 
@@ -355,7 +304,6 @@ nav > a {
 	padding: 10px;
 	margin: 5px;
 	border-radius: 5px;
-	/*background: #72a3c9;*/
 	text-decoration: none;
 	color: #000;
 
@@ -363,7 +311,6 @@ nav > a {
 		transition: all .2s ease;
 }
 nav > a:hover {
-	/*background: #6393b5;*/
 	background: white;
 	border: 2px solid rgba(0,0,0,0);
 }
