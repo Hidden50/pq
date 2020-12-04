@@ -275,44 +275,59 @@ app.components.pokedata = {
 
 app.updateUI = (updateActive = true, updateSearchResults = true, search) => {
 	let phrases = (search || app.components.search.input.value).trim();
-	const hideEvos = (phrases === "");
 
-	phrases = (
-		phrases
-			.toLowerCase()
-			.split(/\s*,\s*/)
-	);
+	const hidePreEvos = (phrases === "");
 
-	const pokeData = (
-		app.pokeData
-			.filter( pokemon => (
-				(!hideEvos || !pokemon.evolutions) &&
-				phrases.every( phrase => (
-					app.pokeTypes.some( type => type.toLowerCase() === phrase.toLowerCase() ) ?
-						pokemon.types.some( type => type.toLowerCase() === phrase.toLowerCase() ) :
-					pokemon.name.toLowerCase().includes(phrase) ||
-					pokemon.types.some( type => type.toLowerCase().includes(phrase) ) ||
-					pokemon.behavior.toLowerCase().includes(phrase) ||
-					(pokemon.recipes && Object.keys(pokemon.recipes).some( dish => dish.toLowerCase().includes(phrase) )) ||
-					pokemon.moves.some( move => move.toLowerCase().includes(phrase) ) ||
-					pokemon.bingos.some( slots => (
-						slots.some( bingo => (
-							bingo.toLowerCase().includes(phrase)
-						))
-					))
-				))
-			))
-			.sort( (x,y) => (
-				phrases.includes(y.name.toLowerCase()) || (
-					phrases.some(phrase => y.name.toLowerCase().startsWith(phrase)) &&
-					!phrases.some(phrase => x.name.toLowerCase().startsWith(phrase))
-				) || (
-					app.components.pokedata.getEvolutions(x).reverse().indexOf(x) -
-					app.components.pokedata.getEvolutions(y).reverse().indexOf(y)
-				) ||
-				(app.pokeData.indexOf(x) - app.pokeData.indexOf(y))
-			))
-	);
+	phrases = phrases
+		.toLowerCase()
+		.split(/\s*,\s*/);
+
+	const pokeData = app.pokeData.filter( pokemon => {
+		if (hidePreEvos && pokemon.evolutions) {
+			return false;  // remove anything that can evolve
+		}
+
+		for (const phrase of phrases) {
+			if (
+				!pokemon.types.map( type => type.toLowerCase() ).includes(phrase) &&
+				!pokemon.name.toLowerCase().includes(phrase) &&
+				!pokemon.types.some( type => type.toLowerCase().includes(phrase) ) &&
+				pokemon.behavior.toLowerCase() !== phrase &&
+//				!(pokemon.recipes && Object.keys(pokemon.recipes).some( dish => dish.toLowerCase().includes(phrase) )) &&
+				!pokemon.moves.some( move => move.toLowerCase().includes(phrase) ) &&
+				!pokemon.bingos.some(  slots => slots.some( bingo => bingo.toLowerCase().includes(phrase) )  )
+			) {
+				return false;  // remove anything that mismatches a phrase
+			}
+		}
+		return true;
+	}).sort( (x,y) => {
+		const includesX = phrases.includes(x.name.toLowerCase());
+		const includesY = phrases.includes(y.name.toLowerCase());
+
+		// fully matched names first
+		if (includesX && !includesY) {
+			return -1;
+		} else if (!includesX && includesY) {
+			return 1;
+		}
+
+		// names matched from the beginning first
+		const startsX = phrases.some( phrase => x.name.toLowerCase().startsWith(phrase) );
+		const startsY = phrases.some( phrase => y.name.toLowerCase().startsWith(phrase) );
+
+		if (startsX && !startsY) {
+			return -1;
+		} else if (!startsX && startsY) {
+			return 1;
+		}
+
+		const evoX = app.components.pokedata.getEvolutions(x).reverse().indexOf(x);
+		const evoY = app.components.pokedata.getEvolutions(y).reverse().indexOf(y);
+
+		// evolved pokemon first, then sort by dexNum
+		return (evoX - evoY) || (app.pokeData.indexOf(x) - app.pokeData.indexOf(y))
+	});
 
 	if (updateActive) {
 		if (!search) {
@@ -326,8 +341,6 @@ app.updateUI = (updateActive = true, updateSearchResults = true, search) => {
 	if (updateSearchResults) {
 		app.components.search.results.innerHTML = (
 			pokeData
-//					.map( data => JSON.stringify(data, null, "\t") )
-//					.join(",\r\n")
 				.map( pokemon => `<div class="faces face-${pokemon.dexNum}" title="${pokemon.name}"></div>` )
 				.join("")
 		);
