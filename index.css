@@ -286,6 +286,24 @@ input {
 	margin-top: -1.5ex;
 }
 
+.flex-table-cell:not(.no-highlight),
+td:not(.no-highlight),
+th:not(.no-highlight) {
+	cursor: pointer;
+}
+.flex-table-cell.highlight,
+td.highlight,
+th.highlight {
+	background-color: lime !important;
+	user-select: none;
+}
+.flex-table-cell.highlight2,
+td.highlight2,
+th.highlight2 {
+	background-color: red !important;
+	user-select: none;
+}
+
 
 .bingos .flex-table > .flex-table-header .arrow-between::after {
 	font-size: 35px;
