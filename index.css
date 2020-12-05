@@ -241,17 +241,18 @@ input {
 	font-family: monospace;
 }
 
-.bingos .flex-table,
-.bingos .flex-subtable {
+
+.flex-table,
+.flex-subtable {
 	display: flex;
 	flex-direction: column;
 }
-.bingos .flex-row {
+.flex-table-row {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
 }
-.bingos .flex-cell {
+.flex-table-cell {
 	flex: 1 1 0;
 	display: flex;
 	flex-direction: column;
@@ -262,37 +263,33 @@ input {
 	margin: 1px;
 	padding: 0px 5px;
 }
-.bingos .flex-row:nth-child(even) .flex-cell {
+.flex-table-row:nth-child(even) > .flex-table-cell {
 	background-color: #f2f2f2;
 }
-.bingos .flex-row:nth-child(odd) .flex-cell {
+.flex-table-row:nth-child(odd) > .flex-table-cell {
 	background-color: #f2f2f2cc;
 }
-.bingo-faces .flex-cell {
-	background: none !important;
-}
-.bingo-slot {
+.flex-table-row.flex-table-header > .flex-table-cell {
 	font-weight: 600;
 	background: none !important;
 }
-.arrow-between {
+.flex-table .arrow-between {
 	display: flex;
 	position: relative;
 	width: 35px;
 	margin: 0px 5px;
 	justify-content: center;
 }
-.arrow-between::after {
+.flex-table .arrow-between::after {
 	content: "\279c";  /* todo: use url() instead, to include an image? */
 	font-size: 20px;
 	position: absolute;
 	margin-top: -1.5ex;
 }
-.bingo-faces .arrow-between::after {
+
+
+.bingos .flex-table > .flex-table-header .arrow-between::after {
 	font-size: 35px;
-}
-.bingos .faces-name {
-	font-weight: 600;
 }
 
 .pokedata .stoneslots .input {
