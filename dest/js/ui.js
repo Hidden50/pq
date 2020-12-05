@@ -171,12 +171,12 @@ app.components.pokedata = {
 		const slots = [0, 1, 2];
 		const bingos = [0, 1, 2];
 
-		this.bingos.innerHTML = `<div class="flex-table"><div class="flex-table-row flex-table-header"><div class="flex-table-cell">${
+		this.bingos.innerHTML = `<div class="flex-table"><div class="flex-table-row flex-table-header"><div class="flex-table-cell no-highlight">${
 			evolutions
 				.map( evo => this.makeFace(evo.dexNum, evo.name, true) )
-				.join(`</div><div class="arrow-between"></div><div class="flex-table-cell">`)
+				.join(`</div><div class="arrow-between"></div><div class="flex-table-cell no-highlight">`)
 		}</div></div>${
-			slots.map( s => `<div class="flex-subtable"><div class="flex-table-row flex-table-header"><div class="flex-table-cell">Slot ${s+1}</div></div>${
+			slots.map( s => `<div class="flex-subtable"><div class="flex-table-row flex-table-header"><div class="flex-table-cell no-highlight">Slot ${s+1}</div></div>${
 				bingos.map( b => `<div class="flex-table-row">${
 					evolutions
 						.map( evo => `<div class="flex-table-cell">${evo.bingos[s][b]}</div>` )
@@ -390,12 +390,27 @@ window.addEventListener('load', () => {
 		}
 	});
 	document.addEventListener('click', e => {
-		if (e.target && e.target.classList && e.target.classList.contains("faces")) {
-			if (e.ctrlKey && app.components.pokedata.activePokemon) {
-				app.components.pokedata.clone();
+		if (e.target && e.target.classList) {
+			if (e.target.classList.contains("faces")) {
+				if (e.ctrlKey && app.components.pokedata.activePokemon) {
+					app.components.pokedata.clone();
+				}
+				app.updateUI(true, false, e.target.title);
+				e.stopPropagation();
+			} else if ( e.target.classList.contains("flex-table-cell") || ["TD", "TH"].includes(e.target.nodeName) ) {
+				if (e.target.classList.contains("no-highlight")) {
+					return;
+				}
+				if (e.target.classList.contains("highlight")) {
+					e.target.classList.remove("highlight");
+					e.target.classList.add("highlight2");
+				} else if (e.target.classList.contains("highlight2")) {
+					e.target.classList.remove("highlight2");
+				} else {
+					e.target.classList.add("highlight");
+				}
+				e.stopPropagation();
 			}
-			app.updateUI(true, false, e.target.title);
-			e.stopPropagation();
 		}
 	});
 
