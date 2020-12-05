@@ -168,26 +168,20 @@ app.components.pokedata = {
 	},
 	formatBingos () {
 		const evolutions = this.getEvolutions();
-		const evoNames = evolutions.map( evo => evo.name );
-		this.bingos.innerHTML = (
-			`<table><tr><th colspan="3">${
-				evoNames.join(", ")
-			}</th></tr>` +
-			[0, 1, 2].map( i => (
-				`<tr><td colspan="3">Slot ${
-					i+1
-				}</td></tr>${
-					evolutions.map( evo => (
-						`<tr>${
-							evo.bingos[i].map( bingo => (
-								`<td>${bingo}</td>`
-							)).join("")
-						}</tr>`
-					)).join("")
-				}`
-			)).join("")
-			+ "</table>"
-		);
+		const slots = [0, 1, 2];
+		const bingos = [0, 1, 2];
+
+		this.bingos.innerHTML = `<div class="flex-table"><div class="flex-row bingo-faces"><div class="flex-cell">${
+			evolutions.map(
+				evo => `<div class="faces face-${evo.dexNum}" title="${evo.name}"></div><div class="faces-name">${evo.name}</div>`
+			).join(`</div><div class="arrow-between"></div><div class="flex-cell">`)
+		}</div></div>${
+			slots.map( s => `<div class="flex-row"><div class="flex-cell bingo-slot">Slot ${s+1}</div></div>${
+				bingos.map( b => `<div class="flex-row">${
+					evolutions.map( evo => `<div class="flex-cell">${evo.bingos[s][b]}</div>` ).join(`<div class="arrow-between"></div>`)
+				}</div>`).join("")
+			}`).join("")
+		}</div>`;
 	},
 	formatStats () {
 		const evolutions = this.getEvolutions();

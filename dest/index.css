@@ -241,8 +241,55 @@ input {
 	font-family: monospace;
 }
 
-.pokedata .bingos table td {
-	text-align: center;
+
+.bingos .flex-table {
+	display: flex;
+	flex-direction: column;
+}
+.bingos .flex-row {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+.bingos .flex-cell {
+	flex: 1 1 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 1px;
+	padding: 0px 5px;
+}
+.bingos .flex-row:nth-child(even) .flex-cell {
+	background-color: #f2f2f2;
+}
+.bingos .flex-row:nth-child(odd) .flex-cell {
+	background-color: #f2f2f2cc;
+}
+.bingo-faces .flex-cell {
+	background: none !important;
+}
+.bingo-slot {
+	font-weight: 600;
+	background: none !important;
+}
+.arrow-between {
+	display: flex;
+	position: relative;
+	width: 35px;
+	margin: 0px 5px;
+	justify-content: center;
+}
+.arrow-between::after {
+	content: "\279c";  /* todo: use url() instead, to include an image? */
+	font-size: 20px;
+	position: absolute;
+	margin-top: -1.5ex;
+}
+.bingo-faces .arrow-between::after {
+	font-size: 35px;
+}
+.bingos .faces-name {
+	font-weight: 600;
 }
 
 .pokedata .stoneslots .input {
