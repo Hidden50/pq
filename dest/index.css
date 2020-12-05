@@ -110,7 +110,6 @@ input {
 }
 .search .results .faces {
 	margin: 5px;
-	cursor: pointer;
 }
 
 .pokedata {
@@ -330,6 +329,7 @@ input {
 }
 
 .faces {
+	cursor: pointer;
 	transition: all .2s ease;
 }
 .results .faces:hover {

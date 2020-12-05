@@ -172,9 +172,9 @@ app.components.pokedata = {
 		const bingos = [0, 1, 2];
 
 		this.bingos.innerHTML = `<div class="flex-table"><div class="flex-table-row flex-table-header"><div class="flex-table-cell">${
-			evolutions.map(
-				evo => `<div class="faces face-${evo.dexNum}" title="${evo.name}"></div><div class="faces-name">${evo.name}</div>`
-			).join(`</div><div class="arrow-between"></div><div class="flex-table-cell">`)
+			evolutions
+				.map( evo => this.makeFace(evo.dexNum, evo.name, true) )
+				.join(`</div><div class="arrow-between"></div><div class="flex-table-cell">`)
 		}</div></div>${
 			slots.map( s => `<div class="flex-subtable"><div class="flex-table-row flex-table-header"><div class="flex-table-cell">Slot ${s+1}</div></div>${
 				bingos.map( b => `<div class="flex-table-row">${
@@ -267,6 +267,11 @@ app.components.pokedata = {
 			}</table>`
 		);
 	},
+	makeFace (dexNum, name, nameDisplay=false) {
+		const faceName = nameDisplay ? `<div class="faces-name">${name}</div>` : ``;
+
+		return `<div class="faces face-${dexNum}" title="${name}"></div>${faceName}`;
+	},
 };
 
 app.updateUI = (updateActive = true, updateSearchResults = true, search) => {
@@ -337,7 +342,7 @@ app.updateUI = (updateActive = true, updateSearchResults = true, search) => {
 	if (updateSearchResults) {
 		app.components.search.results.innerHTML = (
 			pokeData
-				.map( pokemon => `<div class="faces face-${pokemon.dexNum}" title="${pokemon.name}"></div>` )
+				.map( pokemon => app.components.pokedata.makeFace(pokemon.dexNum, pokemon.name) )
 				.join("")
 		);
 	}
@@ -356,6 +361,12 @@ window.addEventListener('load', () => {
 	app.components.search.input.addEventListener('focus', () => setTimeout(() => {
 		app.components.search.container.classList.add("searching");
 	}, 100));
+	app.components.search.input.addEventListener('click', e => {
+		if (!app.searchbarClicked) {
+			app.components.search.input.select();  // select-all
+			app.searchbarClicked = true;
+		}
+	});
 	app.components.search.input.addEventListener('blur', () => setTimeout(() => {
 		app.components.search.container.classList.remove("searching");
 		app.searchbarClicked = false;
@@ -378,6 +389,15 @@ window.addEventListener('load', () => {
 			}
 		}
 	});
+	document.addEventListener('click', e => {
+		if (e.target && e.target.classList && e.target.classList.contains("faces")) {
+			if (e.ctrlKey && app.components.pokedata.activePokemon) {
+				app.components.pokedata.clone();
+			}
+			app.updateUI(true, false, e.target.title);
+			e.stopPropagation();
+		}
+	});
 
 	app.components.pokedata.slots.atk.addEventListener('input',
 		app.components.pokedata.calculateSlotChances.bind(app.components.pokedata)
@@ -385,20 +405,6 @@ window.addEventListener('load', () => {
 	app.components.pokedata.slots.hp.addEventListener('input',
 		app.components.pokedata.calculateSlotChances.bind(app.components.pokedata)
 	);
-
-	app.components.search.container.addEventListener('click', e => {
-		if (e.target === app.components.search.input) {
-			if (!app.searchbarClicked) {
-				app.components.search.input.select();
-				app.searchbarClicked = true;
-			}
-		} else if (e.target && e.target.title) {
-			if (e.ctrlKey && app.components.pokedata.activePokemon) {
-				app.components.pokedata.clone();
-			}
-			app.updateUI(true, false, e.target.title);
-		}
-	});
 
 	app.components.pokedata.header.addEventListener('click', e => {
 		app.components.pokedata.toggleDetails();
