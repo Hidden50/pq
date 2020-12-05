@@ -171,14 +171,16 @@ app.components.pokedata = {
 		const slots = [0, 1, 2];
 		const bingos = [0, 1, 2];
 
-		this.bingos.innerHTML = `<div class="flex-table"><div class="flex-row bingo-faces"><div class="flex-cell">${
+		this.bingos.innerHTML = `<div class="flex-table"><div class="flex-table-row flex-table-header"><div class="flex-table-cell">${
 			evolutions.map(
 				evo => `<div class="faces face-${evo.dexNum}" title="${evo.name}"></div><div class="faces-name">${evo.name}</div>`
-			).join(`</div><div class="arrow-between"></div><div class="flex-cell">`)
+			).join(`</div><div class="arrow-between"></div><div class="flex-table-cell">`)
 		}</div></div>${
-			slots.map( s => `<div class="flex-subtable"><div class="flex-row"><div class="flex-cell bingo-slot">Slot ${s+1}</div></div>${
-				bingos.map( b => `<div class="flex-row">${
-					evolutions.map( evo => `<div class="flex-cell">${evo.bingos[s][b]}</div>` ).join(`<div class="arrow-between"></div>`)
+			slots.map( s => `<div class="flex-subtable"><div class="flex-table-row flex-table-header"><div class="flex-table-cell">Slot ${s+1}</div></div>${
+				bingos.map( b => `<div class="flex-table-row">${
+					evolutions
+						.map( evo => `<div class="flex-table-cell">${evo.bingos[s][b]}</div>` )
+						.join(`<div class="arrow-between"></div>`)
 				}</div>`).join("")
 			}</div>`).join("")
 		}</div>`;
