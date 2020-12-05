@@ -176,11 +176,11 @@ app.components.pokedata = {
 				evo => `<div class="faces face-${evo.dexNum}" title="${evo.name}"></div><div class="faces-name">${evo.name}</div>`
 			).join(`</div><div class="arrow-between"></div><div class="flex-cell">`)
 		}</div></div>${
-			slots.map( s => `<div class="flex-row"><div class="flex-cell bingo-slot">Slot ${s+1}</div></div>${
+			slots.map( s => `<div class="flex-subtable"><div class="flex-row"><div class="flex-cell bingo-slot">Slot ${s+1}</div></div>${
 				bingos.map( b => `<div class="flex-row">${
 					evolutions.map( evo => `<div class="flex-cell">${evo.bingos[s][b]}</div>` ).join(`<div class="arrow-between"></div>`)
 				}</div>`).join("")
-			}`).join("")
+			}</div>`).join("")
 		}</div>`;
 	},
 	formatStats () {

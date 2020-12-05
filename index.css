@@ -241,8 +241,8 @@ input {
 	font-family: monospace;
 }
 
-
-.bingos .flex-table {
+.bingos .flex-table,
+.bingos .flex-subtable {
 	display: flex;
 	flex-direction: column;
 }
