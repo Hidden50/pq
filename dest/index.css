@@ -53,6 +53,16 @@ html:not(.compact) .search {
 html:not(.compact) .pokedata {
 	display: none;
 }
+@media (max-width: 820px) and (min-width: 681px) {
+	.bingos .faces-name {
+		display: none;
+	}
+}
+@media (max-width: 725px) and (min-width: 681px) {
+	.bingos .flex-table .arrow-between {
+		width: 0px;
+	}
+}
 @media (max-width: 680px) {
 	main {
 		flex-direction: column;
@@ -275,8 +285,8 @@ input {
 .flex-table .arrow-between {
 	display: flex;
 	position: relative;
-	width: 35px;
-	margin: 0px 5px;
+	width: 45px;
+	margin: 0px;
 	justify-content: center;
 }
 .flex-table .arrow-between::after {
