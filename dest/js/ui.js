@@ -174,17 +174,15 @@ app.components.pokedata = {
 		const makeArrow = level => level ? `<div class="arrow-between"><div class="evo-level">level ${level}</div></div>` : ``;
 
 		const header = 
-			`<div class="flex-table">${
-				`<div class="flex-table-row flex-table-header">${
-					evolutions.map( evo =>
-						`<div class="flex-table-cell no-highlight">${
-							this.makeFace(evo.dexNum, evo.name, true)
-						}</div>${
-							makeArrow(evo.evolutions && evo.evolutions[0].level)
-						}`
-					).join("")
-				}</div>`
-			}`;
+			`<div class="flex-table-row flex-table-header">${
+				evolutions.map( evo =>
+					`<div class="flex-table-cell no-highlight">${
+						this.makeFace(evo.dexNum, evo.name, true)
+					}</div>${
+						makeArrow(evo.evolutions && evo.evolutions[0].level)
+					}`
+				).join("")
+			}</div>`;
 
 		const formatSlot = s =>
 			`<div class="flex-subtable">${
