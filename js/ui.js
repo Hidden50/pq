@@ -171,19 +171,37 @@ app.components.pokedata = {
 		const slots = [0, 1, 2];
 		const bingos = [0, 1, 2];
 
-		this.bingos.innerHTML = `<div class="flex-table"><div class="flex-table-row flex-table-header"><div class="flex-table-cell no-highlight">${
-			evolutions
-				.map( evo => this.makeFace(evo.dexNum, evo.name, true) )
-				.join(`</div><div class="arrow-between"></div><div class="flex-table-cell no-highlight">`)
-		}</div></div>${
-			slots.map( s => `<div class="flex-subtable"><div class="flex-table-row flex-table-header"><div class="flex-table-cell no-highlight">Slot ${s+1}</div></div>${
-				bingos.map( b => `<div class="flex-table-row">${
-					evolutions
-						.map( evo => `<div class="flex-table-cell">${evo.bingos[s][b]}</div>` )
-						.join(`<div class="arrow-between"></div>`)
-				}</div>`).join("")
-			}</div>`).join("")
-		}</div>`;
+		const makeArrow = level => level ? `<div class="arrow-between"><div class="evo-level">level ${level}</div></div>` : ``;
+
+		const header = 
+			`<div class="flex-table">${
+				`<div class="flex-table-row flex-table-header">${
+					evolutions.map( evo =>
+						`<div class="flex-table-cell no-highlight">${
+							this.makeFace(evo.dexNum, evo.name, true)
+						}</div>${
+							makeArrow(evo.evolutions && evo.evolutions[0].level)
+						}`
+					).join("")
+				}</div>`
+			}`;
+
+		const formatSlot = s =>
+			`<div class="flex-subtable">${
+				`<div class="flex-table-row flex-table-header">${
+					`<div class="flex-table-cell no-highlight">Slot ${s+1}</div>`
+				}</div>${
+					bingos.map( b =>
+						`<div class="flex-table-row">${
+							evolutions
+								.map( evo => `<div class="flex-table-cell">${evo.bingos[s][b]}</div>` )
+								.join(`<div class="arrow-between"></div>`)
+						}</div>`
+					).join("")
+				}`
+			}</div>`;
+
+		this.bingos.innerHTML = `<div class="flex-table">${header}${slots.map(formatSlot).join("")}</div>`;
 	},
 	formatStats () {
 		const evolutions = this.getEvolutions();

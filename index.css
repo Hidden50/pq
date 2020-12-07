@@ -318,6 +318,11 @@ th.highlight2 {
 .bingos .flex-table > .flex-table-header .arrow-between::after {
 	font-size: 35px;
 }
+.bingos .arrow-between .evo-level {
+	position: absolute;
+	width: max-content;
+	margin-top: 10px;
+}
 
 .pokedata .stoneslots .input {
 	margin-bottom: 5px;
