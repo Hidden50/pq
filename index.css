@@ -133,6 +133,8 @@ input {
 	height: 30px;
 	padding: 20px 20px;
 	margin-bottom: 10px;
+	margin-left: 10px;
+	margin-top: 10px;
 	align-items: center;
 	background: #111111;
 	border-radius: 5px;
@@ -179,15 +181,16 @@ input {
 	transform: scale(1.2);
 }
 
+.group {
+	background-color: #ffffff55;
+	margin: 10px;
+}
 .search {
 	display: flex;
 	flex-direction: column;
 	width: 300px;
 	border-radius: 5px;
-}
-.group {
-	background-color: #ffffff55;
-	margin: 10px;
+	margin-top: 15px;
 }
 .pokedata .group {
 	flex-grow: 1;
