@@ -321,6 +321,12 @@ th.highlight {
 .flex-table-cell.highlight2,
 td.highlight2,
 th.highlight2 {
+	background-color: rgb(245, 245, 0) !important;
+	user-select: none;
+}
+.flex-table-cell.highlight3,
+td.highlight3,
+th.highlight3 {
 	background-color: red !important;
 	user-select: none;
 }
