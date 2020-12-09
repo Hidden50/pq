@@ -391,6 +391,7 @@ window.addEventListener('load', () => {
 		if (!e.ctrlKey && !e.AltKey && !e.shiftKey && e.key === "Enter") {
 			const search = app.components.search.input.value;
 			app.updateUI(true, true, search);
+			app.components.search.input.blur();
 			app.components.search.input.value = "";
 			app.updateUI(false, true);
 		} else if (!e.ctrlKey && !e.AltKey && !e.shiftKey && e.key === "Escape") {
