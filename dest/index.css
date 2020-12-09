@@ -34,16 +34,6 @@ footer {
 	margin-top: auto;
 }
 
-.search {
-	display: flex;
-	flex-direction: column;
-	width: 300px;
-	margin: 5px;
-	background: #ffffff11;
-	border: 2px solid black;
-	border-radius: 5px;
-}
-
 html:not(.compact) main {
 	flex-direction: column;
 }
@@ -93,14 +83,13 @@ html:not(.compact) .pokedata {
 	margin-left: 10px;
 	margin-right: 10px;
 	padding-bottom: 10px;
-	border-bottom: 1px solid black;
 	text-align: center;
 }
 .search .title:hover {
 	text-decoration: underline;
 }
 input {
-	border: 2px solid black;
+	border: none;
 	padding: 10px;
 }
 *:focus {
@@ -190,15 +179,21 @@ input {
 	transform: scale(1.2);
 }
 
-.pokedata .group {
-	flex-grow: 1;
-	margin-bottom: 10px;
-	padding: 0px;
+.search {
+	display: flex;
+	flex-direction: column;
+	width: 300px;
 	border-radius: 5px;
 }
-.pokedata > .group {
-	background: #ffffff11;
-	border: 2px solid black;
+.group {
+	background-color: #ffffff55;
+	margin: 10px;
+}
+.pokedata .group {
+	flex-grow: 1;
+	/* margin-bottom: 10px; */
+	padding: 0px;
+	border-radius: 5px;
 }
 .pokedata .group:not([open]) {
 	align-self: flex-start;
@@ -207,7 +202,6 @@ input {
 	font-weight: 600;
 	font-size: 15px;
 	padding: 5px 10px;
-	border-bottom: 1px solid black;
 }
 .pokedata details.group > summary.title {
 	cursor: pointer;
@@ -229,12 +223,11 @@ input {
 .pokedata table {
 	margin: 5px;
 	font-size: 15px;
-	border: 2px solid black;
 	cursor: default;
 }
 .pokedata table th,
 .pokedata table td {
-	padding: 0px 5px;
+	padding: 5px 10px;
 }
 .pokedata table tr:nth-child(even) {
 	background-color: #f2f2f2;
@@ -275,8 +268,8 @@ input {
 	justify-content: center;
 	text-align: center;
 	margin: 1px;
-	padding: 0px 5px;
-	border: 1px solid black;
+	padding: 5px 10px;
+	font-size: 15px;
 }
 .flex-table-row:nth-child(even) > .flex-table-cell {
 	background-color: #f2f2f2;
@@ -290,7 +283,6 @@ input {
 .flex-table-row.flex-table-header > .flex-table-cell {
 	font-weight: 600;
 	background: none !important;
-	border: none;
 }
 .flex-table .arrow-between {
 	display: flex;
@@ -366,7 +358,6 @@ th.highlight3 {
 	overflow-x: auto;
 	background: #000000;
 	color: #cccccc;
-	border: 2px solid #cccccc;
 	font-family: Consolas,Liberation Mono,Courier,monospace;
 	font-size: 10px;
 	tab-size: 4;
@@ -403,13 +394,11 @@ nav > a {
 	border-radius: 5px;
 	text-decoration: none;
 	color: #000;
-
-	border: 2px solid black;
-		transition: all .2s ease;
+	transition: background-color .2s ease;
+	background-color: #ffffff55;
 }
 nav > a:hover {
-	background: white;
-	border: 2px solid rgba(0,0,0,0);
+	background-color: white;
 }
 nav > a > img {
 	margin-right: 10px;
