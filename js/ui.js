@@ -422,6 +422,9 @@ window.addEventListener('load', () => {
 					e.target.classList.add("highlight2");
 				} else if (e.target.classList.contains("highlight2")) {
 					e.target.classList.remove("highlight2");
+					e.target.classList.add("highlight3");
+				} else if (e.target.classList.contains("highlight3")) {
+					e.target.classList.remove("highlight3");
 				} else {
 					e.target.classList.add("highlight");
 				}
