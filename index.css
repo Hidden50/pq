@@ -315,19 +315,19 @@ th:not(.no-highlight) {
 .flex-table-cell.highlight,
 td.highlight,
 th.highlight {
-	background-color: lime !important;
+	background-color: #a5e9a5 !important;
 	user-select: none;
 }
 .flex-table-cell.highlight2,
 td.highlight2,
 th.highlight2 {
-	background-color: rgb(245, 245, 0) !important;
+	background-color: #e9e9a5 !important;
 	user-select: none;
 }
 .flex-table-cell.highlight3,
 td.highlight3,
 th.highlight3 {
-	background-color: red !important;
+	background-color: #e9a5a5 !important;
 	user-select: none;
 }
 
