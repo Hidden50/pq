@@ -258,6 +258,9 @@ input {
 	display: flex;
 	flex-direction: column;
 }
+.flex-subtable {
+	padding-top: 15px;
+}
 .flex-table-row {
 	display: flex;
 	flex-direction: row;
@@ -273,6 +276,7 @@ input {
 	text-align: center;
 	margin: 1px;
 	padding: 0px 5px;
+	border: 1px solid black;
 }
 .flex-table-row:nth-child(even) > .flex-table-cell {
 	background-color: #f2f2f2;
@@ -280,9 +284,13 @@ input {
 .flex-table-row:nth-child(odd) > .flex-table-cell {
 	background-color: #f2f2f2cc;
 }
+.flex-table-header {
+	margin-bottom: 5px;
+}
 .flex-table-row.flex-table-header > .flex-table-cell {
 	font-weight: 600;
 	background: none !important;
+	border: none;
 }
 .flex-table .arrow-between {
 	display: flex;
