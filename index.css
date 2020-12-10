@@ -43,32 +43,6 @@ html:not(.compact) .search {
 html:not(.compact) .pokedata {
 	display: none;
 }
-@media (max-width: 370px) {
-	.bingos .faces-name {
-		display: none;
-	}
-}
-@media (max-width: 350px) {
-	.bingos .flex-table-cell {
-		font-size: 15px;
-	}
-}
-@media (max-width: 759px) {
-	/* single column mode, not enough width to support the sidebar */
-	main {
-		flex-direction: column;
-	}
-	.search {
-		width: unset;
-	}
-	html.compact .search:not(.searching) .results {
-		display: none;
-	}
-
-	.pokedata .group > .data {
-		margin: 5px;
-	}
-}
 
 .search .title {
 	font-size: 30px;
@@ -418,4 +392,31 @@ details[open] summary ~ * {
 @keyframes fadein {
 	0%    {opacity: 0;}
 	100%  {opacity: 1;}
+}
+
+@media (max-width: 370px) {
+	.bingos .faces-name {
+		display: none;
+	}
+}
+@media (max-width: 350px) {
+	.bingos .flex-table-cell {
+		font-size: 15px;
+	}
+}
+@media (max-width: 759px) {
+	/* single column mode, not enough width to support the sidebar */
+	main {
+		flex-direction: column;
+	}
+	.search {
+		width: unset;
+	}
+	html.compact .search:not(.searching) .results {
+		display: none;
+	}
+
+	.pokedata .group > .data {
+		margin: 5px;
+	}
 }
