@@ -285,7 +285,10 @@ th.highlight3 {
 .bingos .flex-table > .flex-table-header .arrow-between .evo-level {
 	position: absolute;
 	width: max-content;
-	margin-top: 45px;
+	margin-top: 12px;
+}
+.bingos .flex-table > .flex-table-header .arrow-between .evo-level:before {
+	content: 'lvl ';
 }
 
 
@@ -351,7 +354,7 @@ th.highlight3 {
 	justify-content: center;
 	width: 0px;
 	height: 0px;
-	margin-top: 5px;
+	transform: translate(0px, 5px);
 }
 
 
@@ -426,5 +429,8 @@ details[open] summary ~ * {
 	}
 	html.compact .search:not(.searching) .results {
 		display: flex;
+	}
+	.bingos .flex-table > .flex-table-header .arrow-between .evo-level:before {
+		content: 'level ';
 	}
 }

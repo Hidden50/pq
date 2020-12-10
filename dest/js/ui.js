@@ -171,7 +171,7 @@ app.components.pokedata = {
 		const slots = [0, 1, 2];
 		const bingos = [0, 1, 2];
 
-		const makeArrow = level => level ? `<div class="arrow-between"><div class="evo-level">level ${level}</div></div>` : ``;
+		const makeArrow = level => level ? `<div class="arrow-between"><div class="evo-level">${level}</div></div>` : ``;
 
 		const header = 
 			`<div class="flex-table-row flex-table-header">${
