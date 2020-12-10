@@ -1,20 +1,6 @@
-img, button {
-	-webkit-user-select: none; /* Safari */
-	-moz-user-select: none; /* Firefox */
-	-ms-user-select: none; /* IE10+/Edge */
-	user-select: none; /* Standard */
-}
-::-moz-selection {
-	background: #7fb6e0;
-}
-::selection {
-	background: #7fb6e0;
-}
-
 html {
 	font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
 }
-
 html, body {
 	display: grid;
 	width: 100%;
@@ -23,7 +9,6 @@ html, body {
 	padding: 0px;
 	background: rgba(127, 182, 224, 0.5);
 }
-
 main {
 	display: flex;
 	flex-direction: column;
@@ -36,12 +21,14 @@ footer {
 	margin-top: auto;
 }
 
+
 html:not(.compact) main {
 	flex-direction: column;
 }
 html:not(.compact) .pokedata {
 	display: none;
 }
+
 
 .search .title {
 	font-size: 30px;
@@ -61,14 +48,6 @@ html:not(.compact) .pokedata {
 .search .title:hover {
 	text-decoration: underline;
 }
-input {
-	border: none;
-	padding: 10px;
-}
-*:focus {
-	outline: none !important;
-	box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
-}
 .search input {
 	align-self: center;
 	width: max(50%,200px);
@@ -85,6 +64,7 @@ input {
 	margin: 5px;
 }
 
+
 .pokedata {
 	flex: 1;
 	display: flex;
@@ -93,11 +73,11 @@ input {
 	column-gap: 10px;
 	border-radius: 5px;
 }
-
 .pokedata:not(:first-of-type) input {
 	pointer-events: none;
 	background: #aaaaaa;
 }
+
 
 .pokedata .header {
 	display: flex;
@@ -125,7 +105,6 @@ input {
 .pokedata .header small {
 	font-size: 15px;
 }
-
 .btn-add,
 .btn-close {
 	width: 25px;
@@ -150,6 +129,7 @@ input {
 .btn-close:hover {
 	transform: scale(1.2);
 }
+
 
 .group {
 	background-color: #ffffff55;
@@ -176,12 +156,12 @@ html.compact .search:not(.searching) .results {
 	font-size: 15px;
 	padding: 5px 10px;
 }
-.pokedata details.group > summary.title {
+.pokedata > details > summary.title {
 	cursor: pointer;
 	transition: all .2s ease;
 	font-size: 20px;
 }
-.pokedata details.group > summary.title:hover {
+.pokedata > details > summary.title:hover {
 	background-color: rgba(255,255,255,0.5);
 	border-top-right-radius: 5px;
 	border-top-left-radius: 5px;
@@ -193,29 +173,21 @@ html.compact .search:not(.searching) .results {
 	margin: 5px;
 }
 
-.pokedata table {
+
+table {
 	margin: 5px;
 	font-size: 15px;
 	cursor: default;
 }
-.pokedata table th,
-.pokedata table td {
+th,
+td {
 	padding: 5px 10px;
 }
-.pokedata table tr:nth-child(even) {
+tr:nth-child(even) {
 	background-color: #f2f2f2;
 }
-.pokedata table tr:nth-child(odd) {
+tr:nth-child(odd) {
 	background-color: #f2f2f2cc;
-}
-
-.pokedata .recipes table td:nth-child(3) {
-	text-align: right;
-}
-
-.pokedata .stats table td:nth-child(2) {
-	white-space: pre;
-	font-family: monospace;
 }
 
 
@@ -258,7 +230,6 @@ html.compact .search:not(.searching) .results {
 	display: flex;
 	position: relative;
 	width: 45px;
-	max-width: max(5px, calc((100vw - 420px) / 2));
 	margin: 0px;
 	justify-content: center;
 }
@@ -275,6 +246,7 @@ html.use-svg-arrows .flex-table .arrow-between::after {
 	width: 1.0em;
 	align-self: center;
 }
+
 
 .flex-table-cell:not(.no-highlight),
 td:not(.no-highlight),
@@ -300,35 +272,52 @@ th.highlight3 {
 	user-select: none;
 }
 
+
 .bingos .flex-table > .flex-table-header {
 	margin-bottom: 15px;
+}
+.bingos .flex-table .arrow-between {
+	max-width: max(5px, calc((100vw - 420px) / 2));
 }
 .bingos .flex-table > .flex-table-header .arrow-between::after {
 	font-size: 35px;
 }
-.bingos .arrow-between .evo-level {
+.bingos .flex-table > .flex-table-header .arrow-between .evo-level {
 	position: absolute;
 	width: max-content;
 	margin-top: 45px;
 }
 
-.pokedata .stoneslots .input {
+
+.stoneslots .input {
 	margin-bottom: 5px;
 }
-.pokedata .stoneslots .input input {
+.stoneslots .input input {
 	width: 75px;
 	border-radius: 5px;
 	text-align: center;
 }
-.pokedata .stoneslots .output tr:first-child td {
+.stoneslots .output tr:first-child td {
 	/* make info-text reasonably wide */
 	max-width: 240px;
 }
-.pokedata .stoneslots table td:nth-child(2) {
+.stoneslots table td:nth-child(2) {
 	text-align: right;
 }
 
-.pokedata .rawdata code {
+
+.recipes td:nth-child(3) {
+	text-align: right;
+}
+
+
+.stats td:nth-child(2) {
+	white-space: pre;
+	font-family: monospace;
+}
+
+
+.rawdata code {
 	transform: rotateX(180deg);
 	width: 100%;
 	max-width: 75vw;
@@ -342,11 +331,12 @@ th.highlight3 {
 	tab-size: 4;
 	-moz-tab-size: 4;
 }
-.pokedata .rawdata code > .output {
+.rawdata code > .output {
 	transform: rotateX(180deg);
 	display: inline-block;
 	cursor: text;
 }
+
 
 .faces {
 	cursor: pointer;
@@ -363,6 +353,7 @@ th.highlight3 {
 	height: 0px;
 	margin-top: 5px;
 }
+
 
 nav {
 	display: flex;
@@ -388,6 +379,28 @@ nav > a:hover {
 }
 nav > a > img {
 	margin-right: 10px;
+}
+
+
+img, button {
+	-webkit-user-select: none; /* Safari */
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+/Edge */
+	user-select: none; /* Standard */
+}
+input {
+	border: none;
+	padding: 10px;
+}
+*:focus {
+	outline: none !important;
+	box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
+}
+::-moz-selection {
+	background: #7fb6e0;
+}
+::selection {
+	background: #7fb6e0;
 }
 
 
