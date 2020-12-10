@@ -110,7 +110,7 @@ input {
 	margin-left: 10px;
 	margin-top: 10px;
 	align-items: center;
-	background: #111111;
+	background: #111111aa;
 	border-radius: 5px;
 	cursor: pointer;
 	transition: all .2s ease;
@@ -356,6 +356,8 @@ th.highlight3 {
 .faces {
 	cursor: pointer;
 	transition: all .2s ease;
+	border: 2px solid white;
+	border-radius: 5px;
 }
 .results .faces:hover {
 	box-shadow: 5px 5px 0px black;
