@@ -26,9 +26,11 @@ html, body {
 
 main {
 	display: flex;
+	flex-direction: column;
+	column-gap: 10px;
 	max-width: 100%;
 	min-height: calc(100% - 10px);
-	margin: 5px;
+	margin: 10px;
 }
 footer {
 	margin-top: auto;
@@ -36,9 +38,6 @@ footer {
 
 html:not(.compact) main {
 	flex-direction: column;
-}
-html:not(.compact) .search {
-	width: unset;
 }
 html:not(.compact) .pokedata {
 	display: none;
@@ -91,7 +90,6 @@ input {
 	display: flex;
 	flex-wrap: wrap;
 	align-content: flex-start;
-	margin: 5px;
 	column-gap: 10px;
 	border-radius: 5px;
 }
@@ -107,8 +105,6 @@ input {
 	height: 30px;
 	padding: 20px 20px;
 	margin-bottom: 10px;
-	margin-left: 10px;
-	margin-top: 10px;
 	align-items: center;
 	background: #111111;
 	border-radius: 5px;
@@ -157,18 +153,18 @@ input {
 
 .group {
 	background-color: #ffffff55;
-	margin: 10px;
+	margin-bottom: 10px;
 }
 .search {
 	display: flex;
 	flex-direction: column;
-	width: 300px;
 	border-radius: 5px;
-	margin-top: 15px;
+}
+html.compact .search:not(.searching) .results {
+	display: none;
 }
 .pokedata .group {
 	flex-grow: 1;
-	/* margin-bottom: 10px; */
 	padding: 0px;
 	border-radius: 5px;
 }
@@ -194,7 +190,7 @@ input {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-around;
-	margin: 10px;
+	margin: 5px;
 }
 
 .pokedata table {
@@ -300,14 +296,13 @@ th.highlight3 {
 	user-select: none;
 }
 
-
 .bingos .flex-table > .flex-table-header .arrow-between::after {
 	font-size: 35px;
 }
 .bingos .arrow-between .evo-level {
 	position: absolute;
 	width: max-content;
-	margin-top: 25px;
+	margin-top: 35px;
 }
 
 .pokedata .stoneslots .input {
@@ -354,6 +349,12 @@ th.highlight3 {
 	box-shadow: 5px 5px 0px black;
 	transform: scale(0.9) translateY(2.25px);
 }
+.faces-name {
+	display: flex;
+	justify-content: center;
+	width: 0px;
+	margin-top: 5px;
+}
 
 nav {
 	display: flex;
@@ -394,29 +395,15 @@ details[open] summary ~ * {
 	100%  {opacity: 1;}
 }
 
-@media (max-width: 370px) {
-	.bingos .faces-name {
-		display: none;
-	}
-}
-@media (max-width: 350px) {
-	.bingos .flex-table-cell {
-		font-size: 15px;
-	}
-}
-@media (max-width: 759px) {
-	/* single column mode, not enough width to support the sidebar */
+/* multi column mode, enough width to support a sidebar next to pokedata */
+@media (min-width: 768px) {
 	main {
-		flex-direction: column;
+		flex-direction: row;
 	}
-	.search {
-		width: unset;
+	html.compact .search {
+		width: 300px;
 	}
 	html.compact .search:not(.searching) .results {
-		display: none;
-	}
-
-	.pokedata .group > .data {
-		margin: 5px;
+		display: flex;
 	}
 }
