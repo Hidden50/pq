@@ -250,9 +250,6 @@ html.compact .search:not(.searching) .results {
 .flex-table-row:nth-child(odd) > .flex-table-cell {
 	background-color: #f2f2f2cc;
 }
-.flex-table-header {
-	margin-bottom: 5px;
-}
 .flex-table-row.flex-table-header > .flex-table-cell {
 	font-weight: 600;
 	background: none !important;
@@ -266,10 +263,17 @@ html.compact .search:not(.searching) .results {
 	justify-content: center;
 }
 .flex-table .arrow-between::after {
-	content: "\279c";  /* todo: use url() instead, to include an image? */
 	font-size: 20px;
 	position: absolute;
+}
+html:not(.use-svg-arrows) .flex-table .arrow-between::after {
+	content: "\279c";
 	margin-top: -1.5ex;
+}
+html.use-svg-arrows .flex-table .arrow-between::after {
+	content: url('data:image/svg+xml; utf8, <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>');
+	width: 1.0em;
+	align-self: center;
 }
 
 .flex-table-cell:not(.no-highlight),
@@ -296,13 +300,16 @@ th.highlight3 {
 	user-select: none;
 }
 
+.bingos .flex-table > .flex-table-header {
+	margin-bottom: 15px;
+}
 .bingos .flex-table > .flex-table-header .arrow-between::after {
 	font-size: 35px;
 }
 .bingos .arrow-between .evo-level {
 	position: absolute;
 	width: max-content;
-	margin-top: 35px;
+	margin-top: 45px;
 }
 
 .pokedata .stoneslots .input {
@@ -353,6 +360,7 @@ th.highlight3 {
 	display: flex;
 	justify-content: center;
 	width: 0px;
+	height: 0px;
 	margin-top: 5px;
 }
 
