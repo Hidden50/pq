@@ -168,26 +168,38 @@ app.components.pokedata = {
 	},
 	formatBingos () {
 		const evolutions = this.getEvolutions();
-		const evoNames = evolutions.map( evo => evo.name );
-		this.bingos.innerHTML = (
-			`<table><tr><th colspan="3">${
-				evoNames.join(", ")
-			}</th></tr>` +
-			[0, 1, 2].map( i => (
-				`<tr><td colspan="3">Slot ${
-					i+1
-				}</td></tr>${
-					evolutions.map( evo => (
-						`<tr>${
-							evo.bingos[i].map( bingo => (
-								`<td>${bingo}</td>`
-							)).join("")
-						}</tr>`
-					)).join("")
+		const slots = [0, 1, 2];
+		const bingos = [0, 1, 2];
+
+		const makeArrow = level => level ? `<div class="arrow-between"><div class="evo-level">${level}</div></div>` : ``;
+
+		const header = 
+			`<div class="flex-table-row flex-table-header">${
+				evolutions.map( evo =>
+					`<div class="flex-table-cell no-highlight">${
+						this.makeFace(evo.dexNum, evo.name, true)
+					}</div>${
+						makeArrow(evo.evolutions && evo.evolutions[0].level)
+					}`
+				).join("")
+			}</div>`;
+
+		const formatSlot = s =>
+			`<div class="flex-subtable">${
+				`<div class="flex-table-row flex-table-header">${
+					`<div class="flex-table-cell no-highlight">Slot ${s+1}</div>`
+				}</div>${
+					bingos.map( b =>
+						`<div class="flex-table-row">${
+							evolutions
+								.map( evo => `<div class="flex-table-cell">${evo.bingos[s][b]}</div>` )
+								.join(`<div class="arrow-between"></div>`)
+						}</div>`
+					).join("")
 				}`
-			)).join("")
-			+ "</table>"
-		);
+			}</div>`;
+
+		this.bingos.innerHTML = `<div class="flex-table">${header}${slots.map(formatSlot).join("")}</div>`;
 	},
 	formatStats () {
 		const evolutions = this.getEvolutions();
@@ -271,6 +283,11 @@ app.components.pokedata = {
 			}</table>`
 		);
 	},
+	makeFace (dexNum, name, nameDisplay=false) {
+		const faceName = nameDisplay ? `<div class="faces-name">${name}</div>` : ``;
+
+		return `<div class="faces face-${dexNum}" title="${name}"></div>${faceName}`;
+	},
 };
 
 app.updateUI = (updateActive = true, updateSearchResults = true, search) => {
@@ -341,7 +358,7 @@ app.updateUI = (updateActive = true, updateSearchResults = true, search) => {
 	if (updateSearchResults) {
 		app.components.search.results.innerHTML = (
 			pokeData
-				.map( pokemon => `<div class="faces face-${pokemon.dexNum}" title="${pokemon.name}"></div>` )
+				.map( pokemon => app.components.pokedata.makeFace(pokemon.dexNum, pokemon.name) )
 				.join("")
 		);
 	}
@@ -360,6 +377,12 @@ window.addEventListener('load', () => {
 	app.components.search.input.addEventListener('focus', () => setTimeout(() => {
 		app.components.search.container.classList.add("searching");
 	}, 100));
+	app.components.search.input.addEventListener('click', e => {
+		if (!app.searchbarClicked) {
+			app.components.search.input.select();  // select-all
+			app.searchbarClicked = true;
+		}
+	});
 	app.components.search.input.addEventListener('blur', () => setTimeout(() => {
 		app.components.search.container.classList.remove("searching");
 		app.searchbarClicked = false;
@@ -368,6 +391,7 @@ window.addEventListener('load', () => {
 		if (!e.ctrlKey && !e.AltKey && !e.shiftKey && e.key === "Enter") {
 			const search = app.components.search.input.value;
 			app.updateUI(true, true, search);
+			app.components.search.input.blur();
 			app.components.search.input.value = "";
 			app.updateUI(false, true);
 		} else if (!e.ctrlKey && !e.AltKey && !e.shiftKey && e.key === "Escape") {
@@ -382,6 +406,33 @@ window.addEventListener('load', () => {
 			}
 		}
 	});
+	document.addEventListener('click', e => {
+		if (e.target && e.target.classList) {
+			if (e.target.classList.contains("faces")) {
+				if (e.ctrlKey && app.components.pokedata.activePokemon) {
+					app.components.pokedata.clone();
+				}
+				app.updateUI(true, false, e.target.title);
+				e.stopPropagation();
+			} else if ( e.target.classList.contains("flex-table-cell") || ["TD", "TH"].includes(e.target.nodeName) ) {
+				if (e.target.classList.contains("no-highlight")) {
+					return;
+				}
+				if (e.target.classList.contains("highlight")) {
+					e.target.classList.remove("highlight");
+					e.target.classList.add("highlight2");
+				} else if (e.target.classList.contains("highlight2")) {
+					e.target.classList.remove("highlight2");
+					e.target.classList.add("highlight3");
+				} else if (e.target.classList.contains("highlight3")) {
+					e.target.classList.remove("highlight3");
+				} else {
+					e.target.classList.add("highlight");
+				}
+				e.stopPropagation();
+			}
+		}
+	});
 
 	app.components.pokedata.slots.atk.addEventListener('input',
 		app.components.pokedata.calculateSlotChances.bind(app.components.pokedata)
@@ -389,20 +440,6 @@ window.addEventListener('load', () => {
 	app.components.pokedata.slots.hp.addEventListener('input',
 		app.components.pokedata.calculateSlotChances.bind(app.components.pokedata)
 	);
-
-	app.components.search.container.addEventListener('click', e => {
-		if (e.target === app.components.search.input) {
-			if (!app.searchbarClicked) {
-				app.components.search.input.select();
-				app.searchbarClicked = true;
-			}
-		} else if (e.target && e.target.title) {
-			if (e.ctrlKey && app.components.pokedata.activePokemon) {
-				app.components.pokedata.clone();
-			}
-			app.updateUI(true, false, e.target.title);
-		}
-	});
 
 	app.components.pokedata.header.addEventListener('click', e => {
 		app.components.pokedata.toggleDetails();

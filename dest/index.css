@@ -1,20 +1,6 @@
-img, button {
-	-webkit-user-select: none; /* Safari */
-	-moz-user-select: none; /* Firefox */
-	-ms-user-select: none; /* IE10+/Edge */
-	user-select: none; /* Standard */
-}
-::-moz-selection {
-	background: #7fb6e0;
-}
-::selection {
-	background: #7fb6e0;
-}
-
 html {
 	font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
 }
-
 html, body {
 	display: grid;
 	width: 100%;
@@ -23,51 +9,26 @@ html, body {
 	padding: 0px;
 	background: rgba(127, 182, 224, 0.5);
 }
-
 main {
 	display: flex;
+	flex-direction: column;
+	column-gap: 10px;
 	max-width: 100%;
 	min-height: calc(100% - 10px);
-	margin: 5px;
+	margin: 10px;
 }
 footer {
 	margin-top: auto;
 }
 
-.search {
-	display: flex;
-	flex-direction: column;
-	width: 300px;
-	margin: 5px;
-	background: #ffffff11;
-	border: 2px solid black;
-	border-radius: 5px;
-}
 
 html:not(.compact) main {
 	flex-direction: column;
 }
-html:not(.compact) .search {
-	width: unset;
-}
 html:not(.compact) .pokedata {
 	display: none;
 }
-@media (max-width: 680px) {
-	main {
-		flex-direction: column;
-	}
-	.search {
-		width: unset;
-	}
-	html.compact .search:not(.searching) .results {
-		display: none;
-	}
 
-	.pokedata .group > .data {
-		margin: 5px;
-	}
-}
 
 .search .title {
 	font-size: 30px;
@@ -82,19 +43,10 @@ html:not(.compact) .pokedata {
 	margin-left: 10px;
 	margin-right: 10px;
 	padding-bottom: 10px;
-	border-bottom: 1px solid black;
 	text-align: center;
 }
 .search .title:hover {
 	text-decoration: underline;
-}
-input {
-	border: 2px solid black;
-	padding: 10px;
-}
-*:focus {
-	outline: none !important;
-	box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
 }
 .search input {
 	align-self: center;
@@ -110,22 +62,22 @@ input {
 }
 .search .results .faces {
 	margin: 5px;
-	cursor: pointer;
 }
+
 
 .pokedata {
 	flex: 1;
 	display: flex;
 	flex-wrap: wrap;
 	align-content: flex-start;
-	margin: 5px;
+	column-gap: 10px;
 	border-radius: 5px;
 }
-
 .pokedata:not(:first-of-type) input {
 	pointer-events: none;
 	background: #aaaaaa;
 }
+
 
 .pokedata .header {
 	display: flex;
@@ -153,7 +105,6 @@ input {
 .pokedata .header small {
 	font-size: 15px;
 }
-
 .btn-add,
 .btn-close {
 	width: 25px;
@@ -179,15 +130,23 @@ input {
 	transform: scale(1.2);
 }
 
-.pokedata .group {
-	flex-grow: 1;
-	margin: 5px 5px;
-	padding: 0px;
+
+.group {
+	background-color: #ffffff55;
+	margin-bottom: 10px;
+}
+.search {
+	display: flex;
+	flex-direction: column;
 	border-radius: 5px;
 }
-.pokedata > .group {
-	background: #ffffff11;
-	border: 2px solid black;
+html.compact .search:not(.searching) .results {
+	display: none;
+}
+.pokedata .group {
+	flex-grow: 1;
+	padding: 0px;
+	border-radius: 5px;
 }
 .pokedata .group:not([open]) {
 	align-self: flex-start;
@@ -196,14 +155,13 @@ input {
 	font-weight: 600;
 	font-size: 15px;
 	padding: 5px 10px;
-	border-bottom: 1px solid black;
 }
-.pokedata details.group > summary.title {
+.pokedata > details > summary.title {
 	cursor: pointer;
 	transition: all .2s ease;
 	font-size: 20px;
 }
-.pokedata details.group > summary.title:hover {
+.pokedata > details > summary.title:hover {
 	background-color: rgba(255,255,255,0.5);
 	border-top-right-radius: 5px;
 	border-top-left-radius: 5px;
@@ -212,56 +170,157 @@ input {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-around;
-	margin: 10px;
+	margin: 5px;
 }
 
-.pokedata table {
+
+table {
 	margin: 5px;
 	font-size: 15px;
-	border: 2px solid black;
 	cursor: default;
 }
-.pokedata table th,
-.pokedata table td {
-	padding: 0px 5px;
+th,
+td {
+	padding: 5px 10px;
 }
-.pokedata table tr:nth-child(even) {
+tr:nth-child(even) {
 	background-color: #f2f2f2;
 }
-.pokedata table tr:nth-child(odd) {
+tr:nth-child(odd) {
 	background-color: #f2f2f2cc;
 }
 
-.pokedata .recipes table td:nth-child(3) {
-	text-align: right;
-}
 
-.pokedata .stats table td:nth-child(2) {
-	white-space: pre;
-	font-family: monospace;
+.flex-table,
+.flex-subtable {
+	display: flex;
+	flex-direction: column;
 }
-
-.pokedata .bingos table td {
+.flex-subtable {
+	padding-top: 15px;
+}
+.flex-table-row {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+.flex-table-cell {
+	flex: 1 1 0;
+	align-self: stretch;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 	text-align: center;
+	margin: 1px;
+	padding: 5px 10px;
+	font-size: 15px;
+}
+.flex-table-row:nth-child(even) > .flex-table-cell {
+	background-color: #f2f2f2;
+}
+.flex-table-row:nth-child(odd) > .flex-table-cell {
+	background-color: #f2f2f2cc;
+}
+.flex-table-row.flex-table-header > .flex-table-cell {
+	font-weight: 600;
+	background: none !important;
+}
+.flex-table .arrow-between {
+	display: flex;
+	position: relative;
+	width: 45px;
+	margin: 0px;
+	justify-content: center;
+}
+.flex-table .arrow-between::after {
+	font-size: 20px;
+	position: absolute;
+}
+html:not(.use-svg-arrows) .flex-table .arrow-between::after {
+	content: "\279c";
+	margin-top: -1.5ex;
+}
+html.use-svg-arrows .flex-table .arrow-between::after {
+	content: url('data:image/svg+xml; utf8, <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>');
+	width: 1.0em;
+	align-self: center;
 }
 
-.pokedata .stoneslots .input {
+
+.flex-table-cell:not(.no-highlight),
+td:not(.no-highlight),
+th:not(.no-highlight) {
+	cursor: pointer;
+}
+.flex-table-cell.highlight,
+td.highlight,
+th.highlight {
+	background-color: #a5e9a5 !important;
+	user-select: none;
+}
+.flex-table-cell.highlight2,
+td.highlight2,
+th.highlight2 {
+	background-color: #e9e9a5 !important;
+	user-select: none;
+}
+.flex-table-cell.highlight3,
+td.highlight3,
+th.highlight3 {
+	background-color: #e9a5a5 !important;
+	user-select: none;
+}
+
+
+.bingos .flex-table > .flex-table-header {
+	margin-bottom: 15px;
+}
+.bingos .flex-table .arrow-between {
+	max-width: max(5px, calc((100vw - 420px) / 2));
+}
+.bingos .flex-table > .flex-table-header .arrow-between::after {
+	font-size: 35px;
+}
+.bingos .flex-table > .flex-table-header .arrow-between .evo-level {
+	position: absolute;
+	width: max-content;
+	margin-top: 12px;
+}
+.bingos .flex-table > .flex-table-header .arrow-between .evo-level:before {
+	content: 'lvl ';
+}
+
+
+.stoneslots .input {
 	margin-bottom: 5px;
 }
-.pokedata .stoneslots .input input {
+.stoneslots .input input {
 	width: 75px;
 	border-radius: 5px;
 	text-align: center;
 }
-.pokedata .stoneslots .output tr:first-child td {
+.stoneslots .output tr:first-child td {
 	/* make info-text reasonably wide */
 	max-width: 240px;
 }
-.pokedata .stoneslots table td:nth-child(2) {
+.stoneslots table td:nth-child(2) {
 	text-align: right;
 }
 
-.pokedata .rawdata code {
+
+.recipes td:nth-child(3) {
+	text-align: right;
+}
+
+
+.stats td:nth-child(2) {
+	white-space: pre;
+	font-family: monospace;
+}
+
+
+.rawdata code {
 	transform: rotateX(180deg);
 	width: 100%;
 	max-width: 75vw;
@@ -270,25 +329,34 @@ input {
 	overflow-x: auto;
 	background: #000000;
 	color: #cccccc;
-	border: 2px solid #cccccc;
 	font-family: Consolas,Liberation Mono,Courier,monospace;
 	font-size: 10px;
 	tab-size: 4;
 	-moz-tab-size: 4;
 }
-.pokedata .rawdata code > .output {
+.rawdata code > .output {
 	transform: rotateX(180deg);
 	display: inline-block;
 	cursor: text;
 }
 
+
 .faces {
+	cursor: pointer;
 	transition: all .2s ease;
 }
 .results .faces:hover {
 	box-shadow: 5px 5px 0px black;
 	transform: scale(0.9) translateY(2.25px);
 }
+.faces-name {
+	display: flex;
+	justify-content: center;
+	width: 0px;
+	height: 0px;
+	transform: translate(0px, 5px);
+}
+
 
 nav {
 	display: flex;
@@ -306,16 +374,36 @@ nav > a {
 	border-radius: 5px;
 	text-decoration: none;
 	color: #000;
-
-	border: 2px solid black;
-		transition: all .2s ease;
+	transition: background-color .2s ease;
+	background-color: #ffffff55;
 }
 nav > a:hover {
-	background: white;
-	border: 2px solid rgba(0,0,0,0);
+	background-color: white;
 }
 nav > a > img {
 	margin-right: 10px;
+}
+
+
+img, button {
+	-webkit-user-select: none; /* Safari */
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+/Edge */
+	user-select: none; /* Standard */
+}
+input {
+	border: none;
+	padding: 10px;
+}
+*:focus {
+	outline: none !important;
+	box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
+}
+::-moz-selection {
+	background: #7fb6e0;
+}
+::selection {
+	background: #7fb6e0;
 }
 
 
@@ -329,4 +417,20 @@ details[open] summary ~ * {
 @keyframes fadein {
 	0%    {opacity: 0;}
 	100%  {opacity: 1;}
+}
+
+/* multi column mode, enough width to support a sidebar next to pokedata */
+@media (min-width: 768px) {
+	main {
+		flex-direction: row;
+	}
+	html.compact .search {
+		width: 300px;
+	}
+	html.compact .search:not(.searching) .results {
+		display: flex;
+	}
+	.bingos .flex-table > .flex-table-header .arrow-between .evo-level:before {
+		content: 'level ';
+	}
 }
