@@ -135,6 +135,9 @@ html:not(.compact) .pokedata {
 	background-color: #ffffff55;
 	margin-bottom: 10px;
 }
+.group > .group {
+	margin: 10px;
+}
 .search {
 	display: flex;
 	flex-direction: column;
