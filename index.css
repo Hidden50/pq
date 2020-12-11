@@ -344,6 +344,7 @@ th.highlight3 {
 .faces {
 	cursor: pointer;
 	transition: all .2s ease;
+	border-radius: 5px;
 }
 .results .faces:hover {
 	box-shadow: 5px 5px 0px black;
