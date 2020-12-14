@@ -160,7 +160,6 @@ html.compact .search:not(.searching) .results {
 	padding: 5px 10px;
 }
 .pokedata > details > summary.title {
-	cursor: pointer;
 	transition: all .2s ease;
 	font-size: 20px;
 }
@@ -312,8 +311,21 @@ th.highlight3 {
 }
 
 
-.recipes td:nth-child(3) {
-	text-align: right;
+.recipes .flex-table-header {
+	margin-bottom: 25px;
+}
+.recipes details {
+	align-self: stretch;
+}
+.recipes summary {
+	text-align: left;
+}
+.recipes .recipe-chance {
+	float: right;
+	margin-left: 10px;
+}
+.recipes .recipe {
+	width: 100%;
 }
 
 
@@ -389,6 +401,9 @@ nav > a > img {
 }
 
 
+summary {
+	cursor: pointer;
+}
 img, button {
 	-webkit-user-select: none; /* Safari */
 	-moz-user-select: none; /* Firefox */

@@ -69,7 +69,7 @@ app.components.pokedata = {
 		});
 	},
 	toggleDetails (target = this.container) {
-		const details = [...target.querySelectorAll("details")];
+		const details = [...target.querySelectorAll(":scope > details")];
 		let open = true;
 		for (const detail of details) {
 			if (detail.open) {
@@ -127,16 +127,11 @@ app.components.pokedata = {
 		}
 
 		if (!pokemon || !pokemon.recipeWeights) {
-			this.recipes.innerHTML = (
-				`<table><tr><th colspan="3">${
-					pokemon && pokemon.name || "?"
-				}</th></tr><tr><th>Dish</th><th>Quality</th><th>Chance</th></tr>` +
-				"<tr><td>-</td><td>-</td><td>-</td></tr>"
-			);
+			this.recipes.innerHTML = "";
 			return;
 		}
 
-		const recipes = [];
+		const recipeChances = [];
 		for (const dish in pokemon.recipeWeights) {
 			for (const quality in pokemon.recipeWeights[dish]) {
 				if (!app.recipeTable[dish][quality].length) {
@@ -146,25 +141,61 @@ app.components.pokedata = {
 				const weight = pokemon.recipeWeights[dish][quality];
 				if (weight) {
 					const recipeChance = weight / app.recipeWeightSums[dish][quality];
-					recipes.push([dish, quality, recipeChance]);
+					recipeChances.push([dish, quality, recipeChance]);
 				}
 			}
 		}
-		recipes.sort( ([,,leftChance], [,,rightChance]) => rightChance - leftChance );
+		recipeChances.sort( ([,,leftChance], [,,rightChance]) => rightChance - leftChance );
 
-		this.recipes.innerHTML = `<table><tr><th colspan="3">${
-			pokemon.name
-		}</th></tr><tr><th>Dish</th><th>Quality</th><th>Chance</th></tr>${
-			recipes.map( ([dish, quality, recipeChance]) =>
-				`<tr><td>${
-					dish
-				}</td><td>${
-					quality.replace("_", " ")
-				}</td><td>${
-					(100 * recipeChance).toFixed(2)
-				}%</td></tr>`
-			).join("")
-		}</table>`;
+		const header = `<div class="flex-table-row flex-table-header">${
+			`<div class="flex-table-cell no-highlight">${
+				this.makeFace(pokemon.dexNum, pokemon.name, true)
+			}</div>`
+		}</div>`;
+
+		const ingredientTable = {
+			B: `<div class="ingredient ingredient-b"></div>`,
+			R: `<div class="ingredient ingredient-r"></div>`,
+			Y: `<div class="ingredient ingredient-y"></div>`,
+			G: `<div class="ingredient ingredient-g"></div>`,
+			M: `<div class="ingredient ingredient-m"></div>`,
+			S: `<div class="ingredient ingredient-s"></div>`,
+			b: `<div class="ingredient ingredient-small-b"></div>`,
+			r: `<div class="ingredient ingredient-small-r"></div>`,
+			y: `<div class="ingredient ingredient-small-y"></div>`,
+			g: `<div class="ingredient ingredient-small-g"></div>`,
+			'{': `<div class="ingredient ingredient-group">`,
+			'}': `</div>`,
+		};
+
+		const formatRecipes = ([dish, quality, recipeChance]) =>
+			`<div class="flex-table-row">${
+				`<div class="flex-table-cell no-highlight">${
+					`<details${
+						dish === "Mulligan" ? `` : ` open`
+					}>${
+						`<summary>${
+							`${
+								app.recipeData.qualityDescriptors[quality]
+							} ${
+								dish
+							} <div class="recipe-chance">${
+								(100 * recipeChance).toFixed(2)
+							}%</div>`
+						}</summary>${
+							app.recipeTable[dish][quality].map( recipe =>
+								`<div class="recipe">${
+									[...recipe]
+										.map( letter => ingredientTable[letter] )
+										.join("")
+								}</div>`
+							).join("")
+						}`
+					}</details>`
+				}</div>`
+			}</div>`;
+
+		this.recipes.innerHTML = `<div class="flex-table">${header}${recipeChances.map(formatRecipes).join("")}</div>`;
 	},
 	formatBingos () {
 		const evolutions = this.getEvolutions();
