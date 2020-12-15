@@ -132,20 +132,46 @@ app.components.pokedata = {
 		}
 
 		const recipeChances = [];
+
+		const dishChances = [];
+		const qualityChances = {
+			basic:     0,
+			good:      0,
+			very_good: 0,
+			special:   0,
+		};
+
 		for (const dish in pokemon.recipeWeights) {
+			const currentDish = {dish, bestChance: 0, chances: {}};
+
 			for (const quality in pokemon.recipeWeights[dish]) {
+				const weight = pokemon.recipeWeights[dish][quality];
+				const recipeChance = weight / app.recipeWeightSums[dish][quality];
+
+				qualityChances[quality] = Math.max(recipeChance, qualityChances[quality]);
+
 				if (!app.recipeTable[dish][quality].length) {
 					continue;  // impossible: no recipe results in this dish/quality combination
 				}
 
-				const weight = pokemon.recipeWeights[dish][quality];
 				if (weight) {
-					const recipeChance = weight / app.recipeWeightSums[dish][quality];
 					recipeChances.push([dish, quality, recipeChance]);
+					currentDish.chances[quality] = recipeChance;
+					currentDish.bestChance = Math.max(recipeChance, currentDish.bestChance);
 				}
 			}
+
+			if (currentDish.bestChance) {
+				dishChances.push(currentDish);
+			}
 		}
+
+		const qualities = Object.keys(qualityChances)
+			.filter( quality => qualityChances[quality] )
+			.sort( (left, right) => qualityChances[right] - qualityChances[left] );
+
 		recipeChances.sort( ([,,leftChance], [,,rightChance]) => rightChance - leftChance );
+		dishChances.sort( (left, right) => right.bestChance - left.bestChance );
 
 		const header = `<div class="flex-table-row flex-table-header">${
 			`<div class="flex-table-cell no-highlight">${
@@ -168,34 +194,54 @@ app.components.pokedata = {
 			'}': `</div>`,
 		};
 
-		const formatRecipes = ([dish, quality, recipeChance]) =>
-			`<div class="flex-table-row">${
-				`<div class="flex-table-cell no-highlight">${
-					`<details${
-						dish === "Mulligan" ? `` : ` open`
-					}>${
-						`<summary>${
-							`${
-								app.recipeData.qualityDescriptors[quality]
-							} ${
-								dish
-							} <div class="recipe-chance">${
-								(100 * recipeChance).toFixed(2)
-							}%</div>`
-						}</summary>${
-							app.recipeTable[dish][quality].map( recipe =>
-								`<div class="recipe">${
-									[...recipe]
-										.map( letter => ingredientTable[letter] )
-										.join("")
-								}</div>`
-							).join("")
-						}`
-					}</details>`
-				}</div>`
+		const formatCell = (dish, quality, recipeChance) =>
+			`<div class="flex-table-cell no-highlight">${
+				`<details${
+					dish === "Mulligan" ? `` : ` open`
+				}>${
+					`<summary>${
+						`${
+							app.recipeData.qualityDescriptors[quality]
+						} ${
+							dish
+						} <div class="recipe-chance">${
+							(100 * recipeChance).toFixed(2)
+						}%</div>`
+					}</summary>${
+						app.recipeTable[dish][quality].map( recipe =>
+							`<div class="recipe">${
+								[...recipe]
+									.map( letter => ingredientTable[letter] )
+									.join("")
+							}</div>`
+						).join("")
+					}`
+				}</details>`
 			}</div>`;
 
-		this.recipes.innerHTML = `<div class="flex-table">${header}${recipeChances.map(formatRecipes).join("")}</div>`;
+		const formatDishQuality = ([dish, quality, recipeChance]) =>
+			`<div class="flex-table-row">${
+				formatCell(dish, quality, recipeChance)
+			}</div>`;
+
+		const formatDish = ({dish, chances}) =>
+			`<div class="flex-table-row">${
+				qualities.map( quality => {
+					const chance = chances[quality];
+
+					if (chance) {
+						return formatCell(dish, quality, chance);
+					}
+
+					return `<div class="flex-table-cell no-highlight"></div>`;
+				}).join("")
+			}</div>`;
+
+		this.recipes.innerHTML = `${
+			`<div class="flex-table media-screen-small">${header}${recipeChances.map(formatDishQuality).join("")}</div>`
+		}${
+			`<div class="flex-table media-screen-medium">${header}${dishChances.map(formatDish).join("")}</div>`
+		}`;
 	},
 	formatBingos () {
 		const evolutions = this.getEvolutions();
