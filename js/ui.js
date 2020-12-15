@@ -444,7 +444,7 @@ app.updateUI = (updateActive = true, updateSearchResults = true, search) => {
 
 window.addEventListener('load', () => {
 	app.updateUI();
-	if (window.innerWidth >= 850) {
+	if (window.innerWidth >= 768) {
 		for (const details of [...document.querySelectorAll("details")]) {
 			details.open = true;
 		}
