@@ -314,11 +314,15 @@ th.highlight3 {
 .recipes .flex-table-header {
 	margin-bottom: 25px;
 }
+.recipes .flex-table-cell {
+	justify-content: flex-start;
+}
 .recipes details {
 	align-self: stretch;
 }
 .recipes summary {
 	text-align: left;
+	min-width: 200px;
 }
 .recipes .recipe-chance {
 	float: right;
@@ -438,8 +442,18 @@ details[open] summary ~ * {
 	100%  {opacity: 1;}
 }
 
+/* single column mode */
+@media (max-width: 767px) {
+	.media-screen-medium {
+		display: none;
+	}
+}
 /* multi column mode, enough width to support a sidebar next to pokedata */
 @media (min-width: 768px) {
+	.media-screen-small {
+		display: none;
+	}
+
 	main {
 		flex-direction: row;
 	}
