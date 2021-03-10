@@ -22,9 +22,9 @@
   },
   "homepage": "https://github.com/hidden50/pq#readme",
   "dependencies": {
-    "gulp-clean-css": "^3.9.4",
-    "gulp-image-resize": "^0.13.0",
-    "gulpfile.js": "^2.0.3",
+    "gulp-clean-css": "^3.10.0",
+    "gulp-image-resize": "^0.13.1",
+    "gulpfile.js": "^2.4.3",
     "imagemin-pngquant": "^5.1.0"
   }
 }
