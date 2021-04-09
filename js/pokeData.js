@@ -5590,7 +5590,7 @@ app.pokeData = [
 		name:          "Onix",
 		dexNum:        "095",
 		color:         "Gray",
-		behavior:      "Melee",
+		behavior:      "Range",
 		growthClass:   "A",
 		stoneSlots:    {
 			multiSlotChances:   [0.05, 0.07, 0.09, 0.14,],
