@@ -1336,7 +1336,7 @@ app.moveData = {
 		type:          "Rock",
 		stoneOptions:  "110100",
 		ingameDesc:    "The user creates pillars of stone from the ground, damaging enemies hit by them.",
-		tierlistRank:  "B-",
+		tierlistRank:  "B",
 		power:         120,
 		cooldown:      5,
 	},
