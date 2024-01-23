@@ -25,9 +25,6 @@ main {
 	max-width: 100%;
 	margin: 10px;
 }
-footer {
-	float: bottom;
-}
 
 
 html:not(.compact) main {
